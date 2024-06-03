@@ -1,0 +1,265 @@
+<style>
+.custom_coll_s {
+    display: flex;
+    gap: 30px;
+}
+.custom_filter {
+    width: 100%;
+    padding-right: 20px;
+}
+.filter_row {
+    margin-bottom: 20px;
+}
+.filter_row label.fil_label {
+    font-weight: 500;
+    font-size: 20px;
+}
+.filter_check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 10px;
+    margin-left: 6px;
+    border-left: 2px solid #eee;
+    font-weight: 500;
+    font-size: 14.5px;
+    color: #58593F;
+}
+.product_count{
+    margin:0;
+    opacity:0.6;
+}
+input{
+    cursor:pointer;
+}
+.filter_check.pr_range {
+    margin-top: 20px;
+}
+.range_in{
+    height: auto;
+    border: 1px solid #e6e6e6;
+    background: #e4e4e4;
+}
+input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+      accent-color: #efb34c;
+}
+.short_pro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight:700;
+    margin-bottom: 15px;
+}
+.short_p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+.selectfilter {
+    border: none;
+    cursor: pointer;
+    background-size: 14px;
+} 
+
+.short_p{
+    cursor:pointer;
+}
+.short_p i:hover{
+    color:#efb34c;
+}
+.coll_heading{
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.custom_filter {
+    max-height: 900px;
+    overflow-y: scroll;
+}
+.custom_filter::-webkit-scrollbar {width:6px;}
+.custom_filter::-webkit-scrollbar-track{background:#edf4f4;}
+.custom_filter::-webkit-scrollbar-thumb{background:#1a39457d;}
+
+.main_filter {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.2s;
+    width: 600px;
+}
+.main_filter:hover {
+    transform: scale(1.05);
+}
+.gfg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #01940b;
+}
+.custom-wrapper {
+  margin: 0;
+}
+
+.header h2 {
+  font-size: 30px;
+  color: #01940b;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+    /* Styles for the price input container */
+.price-input-container {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.price-input .price-field {
+  display: flex;
+  margin-bottom: 22px;
+}
+.price-field span {
+  margin-right: 10px;
+  margin-top: 6px;
+  font-size: 17px;
+}
+.price-input {
+    width: 100%;
+    color: #1a3945;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+    /* Remove Arrows/Spinners */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .slider-container {
+      width: 100%;
+    }
+
+    .slider-container {
+      height: 6px;
+      position: relative;
+      background: #e4e4e4;
+      border-radius: 5px;
+    }
+
+    .slider-container .price-slider {
+      height: 100%;
+      left: 0%;
+      right: 0%;
+      position: absolute;
+      border-radius: 5px;
+      background: #1a3945;
+    }
+
+    .range-input {
+      position: relative;
+    }
+
+.range-input input {
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    background: none;
+    top: -10px;
+    pointer-events: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    border: none;
+    margin: 0;
+  padding:0;
+}
+
+    /* Styles for the range thumb in WebKit browsers */
+    input[type="range"]::-webkit-slider-thumb {
+      height: 18px;
+      width: 18px;
+      border-radius: 70%;
+      background: #1a3945;
+      pointer-events: auto;
+      -webkit-appearance: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .main_filter {
+        width: 80%;
+        margin-right: 5px;
+      }
+
+      .custom-wrapper {
+        width: 100%;
+        left: 0;
+        padding: 0 10px;
+      }
+
+      .projtitle {
+        width: 100%;
+        position: relative;
+        right: 26px;
+      }
+
+      .price-input {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .price-field {
+        margin-bottom: 10px;
+      }
+    }
+</style>
+
+
+
+<div class="custom_filter" collection_id="{{ collection.id }}">
+  <div class="filter_row">
+    <!--  <div class="filter_check" style="display: none;" ><input type="checkbox">In stock</div>-->
+ </div>
+  <div class="filter_row">
+
+  <label class="fil_label">Price</label>
+ <div class="main_price"> 
+    <div class="custom-wrapper">
+      <div class="price-input-container">
+        <div class="slider-container">
+          <div class="price-slider">
+          </div>
+        </div>
+
+        
+
+        <!-- Slider -->
+      <div class="range-input">
+            <input type="range" class="min-range" min="0" max="100000" value="0" step="1">
+        <input type="range" class="max-range" min="0" max="100000" value="100000" step="1">
+      </div>
+               </div>
+
+      <div class="price-input">
+  
+            <input type="number" class="min-input" value="0">
+        <span>To</span>
+  
+            <input type="number" class="max-input" value="100000">
+
+
+        </div>
+      
+    </div>
+  </div>
+  </div>            
+</div>
+
+<script src="{{ 'custom-filter.js' | asset_url }}" defer="defer"></script> 

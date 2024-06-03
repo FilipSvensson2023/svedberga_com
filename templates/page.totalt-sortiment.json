@@ -1,0 +1,123 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "hide_mobile": false
+      }
+    },
+    "main-page": {
+      "type": "main-page",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "content"
+      ],
+      "settings": {
+        "max_width": 980,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    },
+    "festive_curation_AjTGrP": {
+      "type": "festive-curation",
+      "blocks": {
+        "image_t6iw3P": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/final-collection-img1.jpg",
+            "image2": "shopify:\/\/shop_images\/final-collection-img1.jpg",
+            "collection_tittle": "Trees & Shrubs",
+            "link": "#"
+          }
+        },
+        "image_kkrFJj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/final-collection-img2.jpg",
+            "image2": "shopify:\/\/shop_images\/final-collection-img2.jpg",
+            "collection_tittle": "Rhododendron & Azalea",
+            "link": "#"
+          }
+        },
+        "image_rDgBdd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/final-collection-img3.jpg",
+            "image2": "shopify:\/\/shop_images\/final-collection-img3.jpg",
+            "collection_tittle": "Conifers",
+            "link": "#"
+          }
+        },
+        "image_w3bBcr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/final-collection-img4.jpg",
+            "image2": "shopify:\/\/shop_images\/final-collection-img4.jpg",
+            "collection_tittle": "Roses",
+            "link": "#"
+          }
+        },
+        "image_97a668": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/final-collection-img5.jpg",
+            "image2": "shopify:\/\/shop_images\/final-collection-img5.jpg",
+            "collection_tittle": "Frukt",
+            "link": "#"
+          }
+        },
+        "image_dbUkVC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/final-collection-img6.jpg",
+            "image2": "shopify:\/\/shop_images\/final-collection-img6.jpg",
+            "collection_tittle": "Perennials",
+            "link": "#"
+          }
+        },
+        "image_3QLNRM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/final-collection-img7.jpg",
+            "image2": "shopify:\/\/shop_images\/final-collection-img7.jpg",
+            "collection_tittle": "Materials",
+            "link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "image_t6iw3P",
+        "image_kkrFJj",
+        "image_rDgBdd",
+        "image_w3bBcr",
+        "image_97a668",
+        "image_dbUkVC",
+        "image_3QLNRM"
+      ],
+      "settings": {
+        "subheading": "",
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-page",
+    "festive_curation_AjTGrP"
+  ]
+}

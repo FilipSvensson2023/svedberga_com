@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "hide_mobile": false
+      }
+    },
+    "main-cart": {
+      "type": "main-cart",
+      "blocks": {
+        "2e80a36d-6430-46c3-9e9d-1dee82e7df53": {
+          "type": "shipping_timer",
+          "settings": {
+          }
+        },
+        "usp_wkkG3a": {
+          "type": "usp",
+          "settings": {
+            "usp": "<p>Betalsätt väljer du i kassan.<strong><br\/>Faktura, Delbetalning, Swish, kort<\/strong><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "2e80a36d-6430-46c3-9e9d-1dee82e7df53",
+        "usp_wkkG3a"
+      ],
+      "settings": {
+        "show_dynamic_buybutton": false,
+        "enable_giftcard_or_discount_tab": true,
+        "show_payment_methods": false,
+        "show_order_notes": true,
+        "order_notes_alignment": "right",
+        "enable_terms_checkbox": true,
+        "terms_text": "<p>Jag accepterar Svedberga Plantskolas  <a href=\"\/pages\/villkor-information\" target=\"_blank\" title=\"Villkor & Information\">köpevillkor.<\/a><\/p>"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main-cart"
+  ]
+}

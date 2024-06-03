@@ -1,0 +1,144 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "hide_mobile": false
+      }
+    },
+    "166005794226b48f03": {
+      "type": "section-slideshow",
+      "blocks": {
+        "166005794296ae0ec5-0": {
+          "type": "slide",
+          "settings": {
+            "layout": "background",
+            "overlay_opacity": 0,
+            "color_palette": "dark",
+            "button_color_palette": "black",
+            "video": "shopify:\/\/files\/videos\/Sekvens 01_1.mov",
+            "text_position": "text-center",
+            "title_size": "size-50",
+            "title": "Svedberga Plantskola AB",
+            "text": "",
+            "link_text": "",
+            "link_url": "shopify:\/\/collections\/all",
+            "show_link": false,
+            "title_size_mobile": "mobile-size-18"
+          }
+        }
+      },
+      "block_order": [
+        "166005794296ae0ec5-0"
+      ],
+      "settings": {
+        "height": "s",
+        "width": "wide",
+        "autoplay": false,
+        "autoplay_seconds": 4,
+        "enable_controls": false,
+        "height_mobile": "m",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    },
+    "main-page": {
+      "type": "main-page",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "h2"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "content"
+      ],
+      "settings": {
+        "max_width": 980,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    },
+    "d0bdb61b-2aa4-4b1a-9a4d-8207e5268212": {
+      "type": "section-rich-text",
+      "blocks": {
+        "template--19516121350467__d0bdb61b-2aa4-4b1a-9a4d-8207e5268212-title-1": {
+          "type": "title",
+          "settings": {
+            "title_size": "h1",
+            "title": "”Om oss” svedberga.com"
+          }
+        },
+        "template--19516121350467__d0bdb61b-2aa4-4b1a-9a4d-8207e5268212-content-1": {
+          "type": "content",
+          "settings": {
+            "page": "",
+            "text": "<p>Svedberga Plantskola grundades 2007 och erbjuder idag ett av Sveriges största sortiment av trädgårdsväxter till aktörer i trädgårdsbranschen. Vi erbjuder även prisgaranti, så du alltid kan försäkra dig om att du köper de bästa växterna till bästa pris. Vi levererar främst till andra grossister, anläggare, trädgårdsdesigners och plantskolor. <\/p><p>Att våra växter håller högsta kvalité är grunden för oss och våra utbildade och kunniga medarbetare jobbar ständigt med sortimentutveckling och kvalitetssäkring för att alltid garantera våra kunder det bästa i branschen. <\/p><p>Svedberga Plantskolas kontor är beläget i Allerum och det är även där våra medarbetare utgår ifrån. <\/p><p>Vår affärsidé är att det ska vara enkelt och snabbt att köpa kvalitetsväxter till marknadens bästa pris och vi är stolta över att kunna erbjuda detta.<\/p><p><em>Svedberga Plantskola AB (556762-9612)<\/em><\/p>"
+          }
+        },
+        "template--19516121350467__d0bdb61b-2aa4-4b1a-9a4d-8207e5268212-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "link_text": "Button",
+            "link_url": "\/",
+            "button_color_palette": "accent"
+          }
+        }
+      },
+      "block_order": [
+        "template--19516121350467__d0bdb61b-2aa4-4b1a-9a4d-8207e5268212-title-1",
+        "template--19516121350467__d0bdb61b-2aa4-4b1a-9a4d-8207e5268212-content-1",
+        "template--19516121350467__d0bdb61b-2aa4-4b1a-9a4d-8207e5268212-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_palette": "white",
+        "text_alignment": "center",
+        "height": "size-s",
+        "width": "wide",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    },
+    "11d3c4e2-36ac-437f-95a4-87407c1c0fd1": {
+      "type": "section-blog-posts",
+      "settings": {
+        "blog": "one-billion-tree-project",
+        "number_of_items": 3,
+        "text_alignment": "start",
+        "title_size": "h1",
+        "title": "One million tree project",
+        "link_text": "Läs alla",
+        "link_url": "shopify:\/\/blogs\/one-billion-tree-project",
+        "button_color_palette": "accent",
+        "show_link": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": true,
+        "show_excerpt": false,
+        "button_color_palette_post": "dark",
+        "show_link_post": true,
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "166005794226b48f03",
+    "main-page",
+    "d0bdb61b-2aa4-4b1a-9a4d-8207e5268212",
+    "11d3c4e2-36ac-437f-95a4-87407c1c0fd1"
+  ]
+}

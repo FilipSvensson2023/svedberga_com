@@ -1,0 +1,82 @@
+<style>
+  
+.bottom-footer-bar {
+    background: #1a3945b8;
+    margin: 70px 0;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+}
+.bottom-footer-bar .item {
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+}
+.bottom-footer-bar .item a {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 6px 20px;
+    font-size: 18px;
+    color: #58593F;
+    text-decoration: none;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+}
+.bottom-footer-bar .item a span {
+    line-height: 0;
+    position: relative;
+}
+.bottom-footer-bar .item a span:before {
+    content: "";
+    position: absolute;
+    background: #ccc;
+    width: 1px;
+    height: 25px;
+    left: -10px;
+    top: -5px;
+}
+  
+@media (max-width:768px){
+.bottom-footer-bar {
+    flex-wrap: wrap;
+}
+.bottom-footer-bar .item {
+    max-width: 100% !important;
+}
+}
+</style>
+
+
+<div class="new-custom-width">
+  
+      
+      <div class="bottom-footer-bar">
+            <div class="item"> 
+              <a onclick="history.back()" id="last_viewed">Back <span><img src="https://cdn.shopify.com/s/files/1/0710/5613/0345/files/plant.svg"></span></a>
+            </div>
+            <div class="item">
+              <a href="/account">My Orders <span><img src="https://cdn.shopify.com/s/files/1/0710/5613/0345/files/order.svg"></span></a>
+            </div>
+            <div class="item">
+              <a href="/account">My Account <span><img src="https://cdn.shopify.com/s/files/1/0710/5613/0345/files/profile.svg"></span></a>
+            </div>
+      </div>
+
+  </div>
+
+{% schema %}
+  {
+    "name": "Filter Bottom",
+    "settings": [],
+    "presets": [
+      {
+          "name":"Filter Bottom"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,303 @@
+<style>
+.template-index .festive-curation .item:last-child {
+    display: none;
+}
+
+.festive-curation-section {
+    padding: 0px 0 60px;
+    margin: 0 0px 50px;
+    position: relative;
+}
+.festive-curation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+}
+.festive-curation .item {
+    width: 100%;
+    max-width: calc(25% - 15px);
+    position: relative;
+    overflow: hidden;
+}
+.festive-curation .festive-design {
+    position: relative;
+    overflow: hidden;
+}
+.festive-curation .festive-design:before {display:none;
+    content: "";
+    background: #0000000f;
+    width: 95%;
+    height: 95%;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    border: 2px solid #ffffff;
+    opacity: 1;
+  	transition: 0.5s;
+}
+
+.festive-curation .item .line-height-auto {
+    display: block;
+    line-height: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+.festive-curation .item img {
+    width: 100%;
+  	transition: opacity .5s ease,transform .8s cubic-bezier(.25,.46,.45,.94);
+    transform: scale(1);
+}
+.festive-curation .item .back-img {
+    position: absolute;
+    left: 0;
+  	top: 0;
+    opacity: 0;
+}
+.festive-curation .item:hover .front-img {
+    opacity: 0;
+}
+.festive-curation .item:hover .back-img {
+    opacity: 1;
+}
+.festive-curation .item:hover img {
+    transform: scale(1.1);
+}
+
+.festive-curation .item .content {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+  	z-index: 2;
+  	transition: .5s;
+}
+.festive-curation .item:hover .content {
+    transform: translate(-50%,-56%);
+}
+.festive-curation .item .content .heding {
+    margin-bottom: 15px;
+}
+.festive-curation .item:after {
+    content: "";
+    display: inline-block;
+    width: 150%;
+    height: 80%;
+    position: absolute;
+    top: -75%;
+    right: 60%;
+    background: rgba(255,255,255,.15);
+    transform: skewY(-64deg);
+    transition: all ease-out .7s;
+}
+.festive-curation .item:hover:after {
+    top: 120%;
+    right: -75%;
+    transition: all ease-out .7s;
+}
+
+.festive-curation .item .content .heding a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Abel';
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 12px 10px;
+    transition: 0.5s;
+    text-transform: uppercase;
+    text-shadow: 0 3px 13px #000000;
+}
+  
+.bottom-footer-bar {
+    background: #1a3945b8;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.bottom-footer-bar .item {
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+}
+.bottom-footer-bar .item a {
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 6px 20px;
+    font-size: 18px;
+    color: #58593F;
+    text-decoration: none;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+}
+.bottom-footer-bar .item a span {
+    line-height: 0;
+    position: relative;
+}
+.bottom-footer-bar .item a span:before {
+    content: "";
+    position: absolute;
+    background: #ccc;
+    width: 1px;
+    height: 25px;
+    left: -10px;
+    top: -5px;
+}
+
+@media (max-width:991px) {
+.festive-curation .item:last-child {
+    max-width: 100%;
+}
+.festive-curation .item .bottom-footer-bar .item {
+    width: 100%;
+    max-width: 100%;
+}
+}
+
+@media (max-width:767px) {
+.festive-curation .item {
+    max-width: calc(50% - 10px);
+}
+}
+
+@media (max-width:500px) {
+.festive-curation .item {
+    max-width: 100%;
+}
+}
+  
+</style>
+
+<div class="festive-curation-section">
+  <div class="new-custom-width">
+  	{%- if section.settings.subheading != blank or section.settings.title != blank -%}
+      <div class="seaction-heading-design">
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="title">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    
+    <div class="festive-curation">
+	{%- for block in section.blocks -%}
+    <div class="item">
+      <div class="festive-design">
+      	<a class="line-height-auto" href="{{ block.settings.link }}"></a>
+      	<img class="front-img" src="{{ block.settings.image.src | img_url: "large" }}" />
+        <img class="back-img" src="{{ block.settings.image2.src | img_url: "large" }}" />
+      <div class="content">
+        <p class="heding"><a href="{{ block.settings.link }}">{{ block.settings.collection_tittle }}</a></p>
+      </div>
+      </div>
+      
+    </div>
+    {% endfor %}
+      <div class="item">
+        <div class="bottom-footer-bar">
+            <div class="item">
+              <a onclick="history.back()">Back <span><img src="https://cdn.shopify.com/s/files/1/0710/5613/0345/files/plant.svg"></span></a>
+            </div>
+            <div class="item">
+              <a href="/account">My orders <span><img src="https://cdn.shopify.com/s/files/1/0710/5613/0345/files/order.svg"></span></a>
+            </div>
+            <div class="item">
+              <a href="/account">My Account <span><img src="https://cdn.shopify.com/s/files/1/0710/5613/0345/files/profile.svg"></span></a>
+            </div>
+        </div>
+      </div>
+ 
+</div>
+  </div>
+  
+  
+</div>
+
+
+{% schema %}
+  {
+    "name": "Festive-Curation",
+    "settings": [
+		{
+          "type": "text",
+          "id": "subheading",
+          "label": "Sub-heading",
+          "default": "Sub-heading"
+        },
+		{
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Heading"
+        }
+	],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "category design",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Image1"
+        },
+		{
+          "id": "image2",
+          "type": "image_picker",
+          "label": "Image2"
+        },
+		{
+          "type": "text",
+          "id": "collection_tittle",
+          "label": "Collection title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Collection Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "festive-curation",
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]		
+ }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+
+{% endjavascript %}

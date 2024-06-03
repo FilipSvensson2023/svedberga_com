@@ -1,0 +1,271 @@
+<!doctype html>
+{%- assign rtl_languages = 'ae,ar,arc,bcc,bqi,ckb,dv,fa,glk,ha,he,kwh,ks,ku,mzn,nqo,pnb,ps,sd,ug,ur,yi' | split: ',' %}
+<html lang="{{ request.locale.iso_code }}" data-theme="xtra" dir="{% if rtl_languages contains localization.language.iso_code %}rtl{% else %}ltr{% endif %}" class="no-js {% if settings.enable_accessibility_default %}t1ac{% endif %} {% if request.design_mode %}theme-editor{% endif %}">
+	<head>
+      <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WLMWHTXW');</script>
+<!-- End Google Tag Manager -->
+      
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>{{ page_title }}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+		{%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
+		<meta name="theme-color" content="{{ settings.accent_color }}">
+		<meta name="MobileOptimized" content="320">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5, viewport-fit=cover, shrink-to-fit=no">
+		<meta name="msapplication-config" content="{{ 'browserconfig.xml' | asset_url }}">
+		<link rel="canonical" href="{{ canonical_url }}">
+
+        {{ 'custom.css' | asset_url | stylesheet_tag }}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" media='all'>
+      
+		{% unless settings.heading_font.system? and settings.body_font.system? %}<link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>{%- endunless -%}
+		<link rel="preload" as="style" href="{{ 'screen.css' | asset_url }}">
+		<link rel="preload" as="style" href="{{ 'theme-xtra.css' | asset_url }}">
+		<link rel="preload" as="style" href="{{ 'screen-settings.css' | asset_url }}">
+		{% if rtl_languages contains localization.language.iso_code %}<link rel="preload" as="style" href="{{ 'rtl.css' | asset_url }}">{% endif %}
+		{% unless settings.heading_font.system? %}<link rel="preload" as="font" href="{{ settings.heading_font | font_url }}" type="font/woff2" crossorigin>{% endunless %}
+    {% unless settings.body_font.system? %}<link rel="preload" as="font" href="{{ settings.body_font | font_url }}" type="font/woff2" crossorigin>{% endunless %}
+		<link rel="preload" as="font" href="{{ 'xtra.woff2' | asset_url }}" crossorigin>
+		{{ 'screen.css' | asset_url | stylesheet_tag: media: 'screen' }}
+		{{ 'theme-xtra.css' | asset_url | stylesheet_tag: media: 'screen' }}
+		{{ 'screen-settings.css' | asset_url | stylesheet_tag: media: 'screen' }}
+		<noscript><link rel="stylesheet" href="{{ 'async-menu.css' | asset_url }}"></noscript>
+		{%- if template.name == 'blog' or template.name == 'article' -%}
+			<link media="screen" rel="stylesheet" href="{{ 'page-blog.css' | asset_url }}" id="blog-css">
+		{%- endif -%}
+		{%- if template.name == 'cart' -%}
+			<link media="screen" rel="stylesheet" href="{{ 'page-cart.css' | asset_url }}" id="cart-css">
+		{%- endif -%}
+		{%- if template.name == 'collection' or template.name == 'search' -%}
+			{{ 'page-collection.css' | asset_url | stylesheet_tag: preload: true, media: 'screen' }}
+		{%- endif -%}
+		{%- if template.name == '404' -%}
+			<link media="screen" rel="stylesheet" href="{{ 'page-misc.css' | asset_url }}" id="misc-css">
+		{%- endif -%}
+		{%- if template.name == 'product' -%}
+			{{ 'page-product.css' | asset_url | stylesheet_tag: preload: true, media: 'screen' }}
+		{%- endif -%}
+		{%- if settings.enable_accessibility_default %}
+			<link media="screen" rel="stylesheet" href="{{ 'theme-accessible.css' | asset_url }}" id="accessible-mode-css">
+		{%- endif %}
+		{%- if settings.favicon -%}
+    	<link rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png">
+			<link rel="mask-icon" href="safari-pinned-tab.svg" color="#333333">
+			<link rel="apple-touch-icon" href="apple-touch-icon.png">
+    {%- endif -%}
+		<link rel="manifest" href="{{ 'manifest.json' | asset_url }}">
+		<script>document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js');</script>
+		{% render 'social-meta-tags' %}
+		{{ content_for_header }}
+		{{ settings.custom_script_for_head }}
+	</head>
+	<body class="template-{{ template.name | handle }}">
+      <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLMWHTXW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		<div id="root">
+			{%- render 'accessible-nav' -%}
+			{%- sections 'header-group' -%}
+			<main id="content">
+				{{ content_for_layout }}
+				{%- sections 'footer-group' -%}
+			</main>
+			{%- liquid
+				if template.name == 'product'
+					section 'sticky-add-to-cart'
+				endif
+				unless customer
+					render 'mobile-login-dropdown'
+				endunless
+				render 'side-cart-container'
+				render 'quickshop-container'
+				render 'pickup-availability-container'
+
+				if settings.show_newsletterpopup
+					render 'newsletter-popup'
+				endif
+				if settings.show_age_verify_popup
+					render 'age-verify-popup'
+				elsif settings.show_cookiebanner != 'none'
+					render 'cookie-banner'
+				endif
+				if settings.back_to_top_button
+					render 'back-to-top-button'
+				endif
+        render 'upsell-popup'
+			-%}
+		</div>
+		{% render 'global-variables' %}
+		{%- if rtl_languages contains localization.language.iso_code -%}<link media="screen" rel="stylesheet" href="{{ 'rtl.css' | asset_url }}">{%- endif -%}
+		{% render 'color-swatches' %}
+		<script defer src="{{ 'scripts.js' | asset_url }}"></script>
+		<script defer src="{{ 'custom.js' | asset_url }}"></script>
+		{%- if request.design_mode -%}<script defer src="{{ 'backend-listeners.js' | asset_url }}"></script>{%- endif -%}
+		{{ settings.custom_script_for_body }}
+      <!-- 14/03/2024 -->
+
+<script>
+// product page quantity manage
+  var page_type = "{{ request.page_type }}" ;
+
+  {% if product.tags contains 'Svedberga_twentheplant' %}
+         
+          if(page_type == 'product'){
+// function 
+             console.log('page_type: '+page_type+'/product')
+            
+             function price_json(){ 
+
+   
+               
+        let real_money ='';
+        let real_js =document.querySelector('[price-js]').getAttribute('price-js').split(' ') 
+if(parseInt(real_js.length) == 3){
+   let o = document.querySelector('[price-js]').getAttribute('price-js').split('k')[0]
+real_money = o.split(' ')[0]+o.split(' ')[1]
+}else {
+   real_money = document.querySelector('[price-js]').getAttribute('price-js').split(' ')[0]
+}
+// let real_money = document.querySelector('[price-js]').getAttribute('price-js').split(' ')[0]
+let multiply = document.querySelector('.emp-58-json').innerHTML
+let quantity_json = document.getElementById('quantity').value; 
+let total_price_js = parseInt(multiply*quantity_json*real_money)
+
+              
+      
+document.querySelector('.total-price-json').innerHTML = total_price_js
+  console.log('custome_product_price.js')
+      
+}
+ setTimeout(()=>{ 
+price_json()
+},500)
+
+            
+setTimeout(()=>{ 
+   
+document.getElementById('quantity').addEventListener('keyup',price_json);
+  
+document.querySelector('.semantic-amount .incr').addEventListener('click',price_json);
+ 
+  document.querySelector('.semantic-amount .decr').addEventListener('click',price_json);
+
+},1500)
+
+
+                      // add cart item 
+let quantity_jsons_js = document.querySelector('[name="quantity"]').value;
+            
+document.getElementById('main_add_to_cart_btn').addEventListener('click',function(){
+
+  console.log('clicked on add to cart');
+
+    var temp = document.querySelector('[name="quantity"]').value;
+  
+let multiplys = document.querySelector('.emp-58-json').innerHTML
+let quantity_jsons = document.getElementById('quantity');
+quantity_jsons.value = parseInt(multiplys*quantity_jsons.value)
+setTimeout(()=>{
+quantity_jsons.value = temp 
+
+
+},500)   
+})
+
+
+
+
+
+
+
+          }
+
+
+
+//           if(page_type == 'collection'  || page_type == 'search'){
+// event_qunty()
+// }else if(page_type == 'product' || page_type == 'index'){
+//   setTimeout(()=>{
+//     event_qunty()
+//   },5000)
+// }
+//   function event_qunty(){
+
+    
+    
+//     var inputElements = document.querySelectorAll('.overlay-tertiary[type|="submit"]')
+// for (var i = 0; i < inputElements.length; i++) {
+
+
+  
+//     inputElements[i].addEventListener('click', function(event) {
+//       console.log('add to cart')
+//      let input_get =           this.previousElementSibling.previousElementSibling.children[0].children[1]
+//      let oldv =   input_get.value
+//      let input_js =  input_get.value
+
+//       let max_js = input_get.getAttribute('max')
+//        let get_meta_val  = this.getAttribute('metafield_json')
+      
+    
+//         if(parseInt(input_js) < parseInt(max_js) ){
+//             input_get.value = parseInt(input_js*get_meta_val) 
+//         }
+//       setTimeout(()=>{ 
+//         if(parseInt(input_get.value ) > parseInt(max_js) ){
+//                this.children[0].innerHTML = 'inte tillgänglig' ;
+//           console.log( input_get.value +"-----"+ parseInt(max_js))
+          
+//         }
+//         input_get.value = oldv;
+//       },500)
+//       setTimeout(()=>{ 
+//           if( this.children[0].innerHTML == 'inte tillgänglig') {
+//              this.children[0].innerHTML = 'Lägg till i kundvagn' ;
+//             console.log("oldv="+oldv);
+//           }
+//         input_get.value = oldv;
+//       },2000)
+//     });
+// }
+//   }    
+
+  
+    {% endif %}
+  
+  function multiplier_function(element){
+
+    var element = $(element).parents('tr').find('button.compact');
+
+var current_val = parseInt($(element).siblings('.input-amount').find('input').val());
+
+var multiplier = parseInt($(element).attr('metafield_json'));
+
+var quantity = current_val * multiplier;
+
+$(element).siblings('.input-amount').find('input').val(quantity);
+
+    
+setTimeout(()=>{$(element).siblings('.input-amount').find('input').val(current_val);},200);
+    
+// alert(quantity);
+
+}
+
+
+function table_atc_function(element){
+$(element).parents('tr').find('button.compact').click();
+} 
+</script>
+      
+	</body>
+  
+</html>

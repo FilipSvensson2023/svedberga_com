@@ -1,0 +1,132 @@
+ <tr {% if product.variants.size > 1 %} id ="parent_row" onclick="$('.arrow-{{ product.id }}').toggleClass('arrow-rotate'); $('.{{ product.id }}').toggle();" {% endif %}> 
+<td class="sno-heading arrow-drop arrow-{{ product.id }}">
+  <div {% if product.variants.size == 1 %} style="display:none;" {% endif %} class="arrow arrow-rotate" onclick="this.classList.toggle('arrow-rotate');">
+    <i class="fa fa-angle-right plus"></i>
+    <i class="fa fa-angle-down minus"></i>
+  </div>
+</td>
+  {%- liquid
+    assign product_form_class = 'f8pr form-card'
+    unless enable_quick_buy_mobile
+      assign product_form_class = product_form_class | append: ' mobile-hide'
+    endunless
+    unless enable_quick_buy_desktop
+      assign product_form_class = product_form_class | append: ' mobile-only'
+    endunless
+    assign product_form_id = 'quick-add-' | append: section.id | append: product.id | append: '-quick-add-form_x'
+  -%}
+   <td class="Quantity-heading">
+    {% if product.variants.size == 1 %}
+    {%- form 'product', product, id: product_form_id, class: product_form_class, novalidate: 'novalidate' -%}
+        <fieldset>
+          <div class="quen-cart">
+            <input type="hidden" name="id" vari="tet" value="{{ product.variants[0].id }}">
+          <span class="input-amount">
+              <label for="quantity-{{ product_form_id }}" class="hidden">{{ 'product.form.quantity' | t }}</label>
+            {% for variant in product.variants %}
+  {% if variant.inventory_management == 'shopify' and variant.inventory_policy == 'deny' %}
+    <input type="number" class="cust_input_qty" quantity_btn id="quantity-{{ product_form_id }}" name="quantity" min="1" max="{{ variant.inventory_quantity }}" value="1" required> 
+      <span id="inventory_span" style="display:none;"> Value must be less than or equal to {{ variant.inventory_quantity }} </span>
+  {% endif %}
+{% endfor %}
+
+            </span>
+  
+            <button style="display:none;" type="submit" metafield_json="{% if  product.metafields.global.unit_qty != blank  %} {{ product.metafields.global.unit_qty }}{% else %} 1{% endif %}" class="overlay-tertiary{% if quick_buy_compact %} compact{% if layout == 'list' %} w160{% endif %}{% endif %}">
+              {%- unless quick_buy_compact -%}<span class="mobile-hide">{{ 'product.form.add_to_cart' | t }}</span>{%- endunless -%}
+              <i aria-hidden="true" class="icon-cart{% unless quick_buy_compact %} mobile-only{% endunless %}"></i>
+            </button>
+          </div>
+          
+        </fieldset>
+    {% endform %}
+{% else %}
+
+{% endif %}
+  </td>
+       <td class="varient order">
+       <span class="number"> {% if  product.metafields.global.unit_qty != blank  %}X {{ product.metafields.global.unit_qty }} 
+         <input type="hidden" class="unit_qty" value="{{ product.metafields.global.unit_qty }}"/>{%- endif -%} 
+      </span></td>
+  <td class="title plantname">
+    <p class="title1">
+      <a href="{{ product.url }}">{{ product.title }}
+        {% if product.metafields.global.sizename %}
+          <span class="metafield">- {{ product.metafields.global.sizename }}</span>
+        {% endif %}
+      </a>
+    </p>
+    <p class="title2">{{ product.vendor }}</p> 
+  </td>
+{% comment %} {% if product.variants.size == 1 %}{{ product.first_available_variant.sku }}{% else %}-{% endif %} {% endcomment %} 
+  <td class="sku sku_table">{{ product.metafields.global.Art_number }} </td>
+  <td class="price price-design">
+    <p class="price1">{{ product.price | money }}:- <span>Inkl moms</span></p> 
+   {% comment %}
+    <p class="price2">{{ product.price | money }} Exkl moms </p>
+ {% endcomment %}
+  </td>
+  <td class="picture"><img {% if product.featured_image == null %} src="https://cdn.shopify.com/s/files/1/0517/3261/1228/files/BlankImagefornoProductImage.jpg?v=1712293396" {% endif %} src="{{ product.featured_image | image_url }}"></td>
+  <td class="button"> 
+            {% if product.selected_or_first_available_variant.inventory_quantity <= 0 %}
+ <button {% if product.variants.size != 1 %} style="display:none;" {% endif %} class="add-to-cart btn__dis " title="Out of stock" variant_id="{{ product.selected_or_first_available_variant.id }}" inventory_qty="{{ product.selected_or_first_available_variant.inventory_quantity }}" onmousedown="multiplier_function(this);" onclick="table_atc_function(this), handleAddToCartClick(this, '{{ product.metafields.global.unit_qty }}', '{{ product.handle }}');"" disabled> <i class="fa fa-shopping-cart"></i></button> 
+{% else %}
+  <button {% if product.variants.size != 1 %} style="display:none;" {% endif %} class="add-to-cart "  variant_id="{{ product.selected_or_first_available_variant.id }}" inventory_qty="{{ product.selected_or_first_available_variant.inventory_quantity }}" onmousedown="multiplier_function(this);" onclick="table_atc_function(this), handleAddToCartClick(this, '{{ product.metafields.global.unit_qty }}', '{{ product.handle }}');" > <i class="fa fa-shopping-cart"></i></button> {% endif %}
+
+       </td>
+</tr>
+{% for variant in product.variants %}
+
+    {% if variant.title != 'Default Title' %}
+ <tr class="{{ product.id }}" style="display:none;">
+      <td class="sno-heading arrow-drop"></td>
+   <td class="Quantity-heading">
+    {%- form 'product', product, id: product_form_id, class: product_form_class, novalidate: 'novalidate' -%}
+        <fieldset>
+          <div class="quen-cart">
+            <input type="hidden" name="id" variant_id = "{{ variant.id }}" value="{{ variant.id }}">
+          <span class="input-amount">
+              <label for="quantity-{{ product_form_id }}" class="hidden">{{ 'product.form.quantity' | t }}</label>
+              <input type="number" quantity_btn id="quantity-{{ product_form_id }}" name="quantity" value="1" {% if current_variant.inventory_management == 'shopify' and current_variant.inventory_policy == 'deny' -%}max="{{ current_variant.inventory_quantity }}"{% endif %} required>
+            </span>
+  
+              <button  style="display:none;" vari="{{ variant.id }}" type="submit" metafield_json="{% if  product.metafields.global.unit_qty != blank  %}{{ product.metafields.global.unit_qty }}{% else %} 1{% endif %}" class="overlay-tertiary{% if quick_buy_compact %} compact{% if layout == 'list' %} w160{% endif %}{% endif %}" onmousedown="multiplier_function(this);">
+              {%- unless quick_buy_compact -%}<span class="mobile-hide">{{ 'product.form.add_to_cart' | t }}</span>{%- endunless -%}
+              <i aria-hidden="true" class="icon-cart{% unless quick_buy_compact %} mobile-only{% endunless %}"></i>
+            </button>
+          </div>
+          
+        </fieldset>
+    {% endform %}
+  </td>
+
+      <td class="varient order">
+       <span class="number"> {% if  product.metafields.global.unit_qty != blank  %}X {{ product.metafields.global.unit_qty }} 
+         <input type="hidden" class="unit_qty" value="{{ product.metafields.global.unit_qty }}"/>{%- endif -%} 
+      </span></td>
+   
+  <td class="title plantname">
+      <p class="title1"><a href="{{ product.url }}">{{ variant.title }}
+      {% if product.metafields.global.sizename %}
+            <span class="metafield">- {{ product.metafields.global.sizename }}</span>
+        {% endif %}
+      </a></p>
+  </td>
+
+  <td class="sku table_sku">{{ product.metafields.global.Art_number }}</td>
+  <td class="price price-design">
+    <p class="price1">{{ variant.price | money }} Inkl moms</p>
+    <p class="price2">{{ variant.price | money }} Exkl moms </p>
+  </td>
+  <td class="picture"><img <img {% if product.featured_image == null %} src="https://cdn.shopify.com/s/files/1/0517/3261/1228/files/BlankImagefornoProductImage.jpg?v=1712293396" {% endif %} src="{{ product.featured_image | image_url }}"></td>
+  <td class="button">
+   {% if product.selected_or_first_available_variant.inventory_quantity <= 0 %}
+ <button {% if product.variants.size != 1 %} style="display:none;" {% endif %} class="add-to-cart " variant_id="{{ product.selected_or_first_available_variant.id }}" inventory_qty="{{ product.selected_or_first_available_variant.inventory_quantity }}" onmousedown="multiplier_function(this);" onclick="table_atc_function(this), handleAddToCartClick(this, '{{ product.metafields.global.unit_qty }}', '{{ product.handle }}');" disabled> <i class="fa fa-shopping-cart"></i></button> 
+{% else %}
+  <button {% if product.variants.size != 1 %} style="display:none;" {% endif %} class="add-to-cart " variant_id="{{ product.selected_or_first_available_variant.id }}" inventory_qty="{{ product.selected_or_first_available_variant.inventory_quantity }}" onmousedown="multiplier_function(this);" onclick="table_atc_function(this), handleAddToCartClick(this, '{{ product.metafields.global.unit_qty }}', '{{ product.handle }}');" > <i class="fa fa-shopping-cart"></i></button> {% endif %}
+
+  </td>
+</tr>
+    {% endif %}
+
+  {% endfor %}

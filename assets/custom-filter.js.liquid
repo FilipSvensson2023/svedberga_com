@@ -1,0 +1,909 @@
+  var sortingFlag = false;
+  // Filter Code Start
+
+  //get filter
+  async function get_filter() {
+
+      var filter;
+
+      await $.ajax({
+
+          url: 'https://devsvedberga.com/svedberga_business/filters/frontend_filter/render_filter.php',
+
+          async: true,
+
+          type: "GET",
+
+          success: function(response) {
+              filter = JSON.parse(response);
+
+
+          }
+
+      });
+
+      return filter;
+
+  }
+
+  var filter_type = {}; 
+  async function filter_init() {
+      var filter_data = await get_filter();
+      console.log(filter_data);
+
+      $.each(filter_data, function(index, value) {
+          var attributes_data = '';
+  $.each(value, function(index, value) {
+          attributes_data += `<div class="filter_check">
+              <input class="filter_attribute" type="checkbox">${value}
+          </div>`;
+      });
+      $('.custom_filter').append(`<div class="filter_row">
+          <label class="fil_label">${index}</label>
+          ${attributes_data}
+          <p data-v-cc9fbcf8="" class="load_more_btn" style="margin-left: 20px; margin-top: 10px; color: rgb(128, 174, 18); cursor: pointer; z-index: 10;"><b data-v-cc9fbcf8=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Load more +</font></font></b></p>
+      </div>`);
+  });
+
+  // Hide all filter checkboxes initially except the first five
+  $('.filter_check').hide();
+  $('.filter_row').each(function() {
+      $(this).find('.filter_check:lt(5)').show();
+      var filterCheckCount = $(this).find('.filter_check').length;
+      $(this).attr('data-filter-check-count', filterCheckCount);
+  });
+
+  // Click event for "Load More" button
+  $('.custom_filter').on('click', '.load_more_btn', function() {  
+      var $filterRow = $(this).closest('.filter_row');
+      var filterCheckCount = $filterRow.attr('data-filter-check-count');
+      $filterRow.find('.filter_check:hidden').slice(0, filterCheckCount).show();
+      // Hide the "Load More" button if no more hidden checkboxes
+      if ($filterRow.find('.filter_check:hidden').length === 0) {
+          $(this).hide();
+          $(this).after(`<p data-v-cc9fbcf8="" class="load-more-span" style="margin-left: 20px; margin-top: 10px; color: rgb(128, 174, 18); cursor: pointer; z-index: 10;"><b data-v-cc9fbcf8="">Load less -</b></p>`);
+      }
+  });
+
+  // Click event for "Load Less" button
+  $('.custom_filter').on('click', '.load-more-span', function() {
+      var $filterRow = $(this).closest('.filter_row');
+      $filterRow.find('.filter_check:gt(4)').hide();
+      $(this).hide();
+      $filterRow.find('.load_more_btn').show();
+  });
+
+    
+      var other_data = {}; 
+
+      $('.filter_attribute').on('click', function() {   
+
+    // onclick on filter filter check btn clr all show
+    $('.clr_all_btn').show();
+
+        // sortingFlag = true;
+          filter_type = {};
+          $('.filter_attribute:checked').each(function(index, value) { 
+                
+              // Other data start 
+                var min_range_value = parseInt($('.min-input').val()); 
+                var max_range_value = parseInt($('.max-input').val()); 
+                var isAnyCheckboxChecked = $('.filter_row input[type="checkbox"]:checked').length > 0;
+                var attribute = isAnyCheckboxChecked ? 'checked' : 'not checked'; 
+      
+                // Include min and max range values in other_data object
+                  other_data['min_range_value'] = min_range_value;
+                  other_data['max_range_value'] = max_range_value;
+                  other_data['checkbox_status'] = isAnyCheckboxChecked ? 'checked' : 'not checked';  
+                // Other data end
+
+          var text = $(value).parents('.filter_check').text().trim();
+          var filter_type_text = $(value).parents('.filter_check').siblings('.fil_label').text().trim();
+          
+          if (filter_type.hasOwnProperty(filter_type_text)) {
+              if (Array.isArray(filter_type[filter_type_text])) {
+                  filter_type[filter_type_text].push(text);
+              } else {
+                  filter_type[filter_type_text] = [filter_type[filter_type_text], text];
+              }
+          } else {
+              filter_type[filter_type_text] = text;
+          }
+
+            
+      });
+
+                    var isAnyCheckboxChecked = $('.filter_row input[type="checkbox"]:checked').length > 0;
+                var attribute = isAnyCheckboxChecked ? 'checked' : 'not checked'; 
+
+        var collection_id = $('.custom_filter').eq(0).attr('collection_id');
+
+  if(collection_id){
+
+    filter_type['collection_id'] = collection_id;
+
+  }
+
+        if(attribute == 'not checked'){
+        filter_type['attribute'] = attribute;
+          filter_type['collection_id'] = collection_id;
+
+          window.location.reload();
+  }
+        
+      var filter_type_json = JSON.stringify(filter_type); 
+
+        console.log(filter_type);
+      
+
+      var other_data_json = JSON.stringify(other_data);
+      
+          $.ajax({
+              url: 'https://devsvedberga.com/svedberga_business/sv_com/filter_data_get.php',
+              type: 'POST',
+              contentType: 'application/json',
+              data: filter_type_json,
+              success: function(response) {
+                  console.log('Data posted successfully:', response);
+                  setTimeout(function() {
+                      fetchDataFromUrl('https://devsvedberga.com/svedberga_business/sv_com/sv_filter_file.php', currentPage);  
+                    // setTimeout(function(){
+                    //    fetchData(currentPage);
+                    //  }, 1500);
+
+                    
+                      
+                  }, 1000);
+              },
+              error: function(xhr, status, error) {
+                  console.error('Error posting data:', error);
+              }
+          }); 
+
+      //      $.ajax({
+      //     url: 'https://devsvedberga.com/svedberga_business/filters/frontend_filter/other_data_get.php',
+      //     type: 'POST',
+      //     contentType: 'application/json',
+      //     data: other_data_json,
+      //     success: function(response) {
+      //        console.log('Other data updated:', response);
+      //     },
+      //     error: function(xhr, status, error) {
+      //         // Handle error for other data
+      //     }
+      // });
+          console.log(filter_type_json);
+      });
+  }
+
+
+  filter_init();
+
+  var sortingFlag = false;
+  var customerId;
+
+  $(document).ready(function() {
+    if (typeof __st !== 'undefined') {
+      customerId = __st.cid;
+      
+      if (customerId) {
+        console.log('Logged in', customerId);
+      } else {
+        console.log('Not logged in');
+      }
+    } else {
+      console.log('Customer status unknown');
+    }
+  });
+
+  // Main fetchDataFromUrl fn
+
+  var unit_qty;
+  function fetchDataFromUrl(url, currentPage, collection_id = null) { 
+
+  var minValStr = parseInt($(".range-input input").eq(0).val());
+    var maxValStr = parseInt($(".range-input input").eq(1).val());
+    
+  console.log('products data get');
+      $.ajax({
+          url: url,
+          type: "POST",
+        data : {
+              page: currentPage,
+              optionText : selectedOptionText, 
+                minVal:minValStr,
+              maxVal: maxValStr,
+          collection_id: collection_id
+              },
+          dataType: "json",
+          success: function(response) {
+              console.log(response);
+
+              // Clear existing table data
+              $('.table-data tbody').empty();
+            
+                totalPages = response.totalPages;
+
+            if(currentPage > totalPages){
+
+              currentPage = totalPages;
+
+              fetchDataFromUrl(url, currentPage)
+
+              }
+            
+                  updatePagination();  // Update pagination links based on the fetched data 
+                  append_paginated_data(response);
+
+          
+
+              // Check if response is an array of products
+              // if (Array.isArray(response.records)) { 
+              //         var limit = 40;
+              //          var count = 0;
+              //     // Iterate over each product in the response array
+              //     $.each(response.records, function(index, product) { 
+              //             if (count >= limit) {
+              //             return false; // Break out of the loop once the limit is reached
+              //         }
+              //         // Provided HTML strings for each row
+              //         var first_row = '<div style="display:none;" class="arrow arrow-rotate" onclick="this.classList.toggle(\'arrow-rotate\');"><i class="fa fa-angle-right plus"></i><i class="fa fa-angle-down minus"></i></div>';
+              //         var second_row = '<form method="post" action="/cart/add" id="quick-add-template--' + product.product_id + '-quick-add-form_x" accept-charset="UTF-8" class="f8pr form-card cart-initialized" enctype="multipart/form-data" novalidate="novalidate"><input type="hidden" name="form_type" value="product" style="z-index: 78;"><input type="hidden" name="utf8" value="✓" style="z-index: 77;"><fieldset style="z-index: 76;"><div class="quen-cart" style="z-index: 75;"><input type="hidden" name="id" value="' + product.variant_id + '"><span class="input-amount semantic-input-initialized"><span class="semantic-amount"><label for="quantity-quick-add-template--' + product.product_id + '-quick-add-form_x" class="hidden">Antal</label><input type="number" quantity_btn="" id="quantity-quick-add-template--' + product.product_id + '-quick-add-form_x" name="quantity" value="1" required=""><a class="incr" href="./" aria-label="Increase by 1"></a><a class="decr disabled" href="./" aria-label="Decrease by 1"></a></span></span><button style="display:none;" type="submit" metafield_json="' + product.metafield.unit_qty + '" class="overlay-tertiary"><span class="mobile-hide">Lägg till i kundvagn </span><i aria-hidden="true" class="icon-cart mobile-only"></i></button></div></fieldset><input type="hidden" name="product-id" value="' + product.product_id + '"><input type="hidden" name="section-id" value="template--' + product.product_id + '"></form>';
+                      
+              //         var metafield_data = product.metafield; 
+              //         var parsed_metafield_data = JSON.parse(metafield_data);
+              //          unit_qty = parsed_metafield_data.unit_qty;
+
+              //         // console.log('metafield data is ', metafield_data);
+
+              //         var third_row = '<span class="number"> X '+ unit_qty +' <input type="hidden" class="unit_qty" value="'+ unit_qty +'"></span>';
+              //         var fourth_row = '<p class="title1"><a href="/products/' + product.handle + '">' + product.title + '</a></p><p class="title2">' + product.vendor + '</p>';
+              //         var fifth_row = '<span class="r6rt rating-initialized" data-val="" data-of="5"><span class="rating"><span class="star"><span class="fill" style="width: 0%;"></span></span><span class="star"><span class="fill" style="width: 0%;"></span></span><span class="star"><span class="fill" style="width: 0%;"></span></span><span class="star"><span class="fill" style="width: 0%;"></span></span><span class="star"><span class="fill" style="width: 0%;"></span></span></span><span class="rating-label"></span></span>';
+              //         var sixth_row = '<span class="sku">' + product.variant_sku + '</span>';
+              //         var seventh_row = '<p class="price1">Login</p>'; 
+                      
+              //       var roundedPrice = Math.round(parseFloat(product.variant_price)); // Rounding to the nearest whole number
+              //       var vatIncludePrice = roundedPrice + roundedPrice * 24.71 / 100;
+              //       var roundedVatIncludePrice = Math.ceil(vatIncludePrice);
+                    
+              //        var seventh_row_login = '<p class="price1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SEK '+ roundedVatIncludePrice +' INC. VAT</font></font></p>' +
+              //            '<p class="price2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SEK '+ roundedPrice + ' EXC. VAT</font></font></p>';
+
+              //         var image_src = product.image_src || 'https://cdn.shopify.com/s/files/1/0710/5613/0345/files/Svedbergalogo.png?v=1697700623';
+              //         var eight_row = '<img src="' + image_src + '">';
+
+              //         var ninth_row = '<button class="add-to-cart" onclick="adc_fn(this)" id="cust_adc" variant_id="'+ product.variant_id +'" customer_id="{{ customer.id }}"><i class="fa fa-sign-in"></i></button>'; 
+              //         var ninth_row_login = '<button class="add-to-cart" variant_id="'+ product.variant_id +'"onmousedown="" id="cust_adc" onclick="handleAddToCartClick(this)"> <i class="fa fa-shopping-cart"></i></button>'
+
+              //         // Create a new row for each product
+              //         var newRow = $('<tr>');
+              //         // Append each product's data to the respective columns in the row
+              //         newRow.append($('<td>').addClass('sno-heading arrow-drop').html(first_row));
+              //         newRow.append($('<td>').addClass('Quantity-heading').html(second_row));
+              //         newRow.append($('<td>').addClass('varient order').html(third_row));
+              //         newRow.append($('<td>').addClass('title plantname').html(fourth_row));
+              //         newRow.append($('<td>').addClass('review').html(fifth_row));
+              //         newRow.append($('<td>').addClass('sku').html(sixth_row));
+
+
+              //         if (typeof customerId === 'undefined') {
+              //         newRow.append($('<td>').addClass('price price-design').html(seventh_row));
+              //           } else {
+              //               newRow.append($('<td>').addClass('price price-design').html(seventh_row_login));
+              //           }
+
+              //         newRow.append($('<td>').addClass('picture').html(eight_row)); 
+                      
+              //         if (typeof customerId === 'undefined') {
+              //         newRow.append($('<td>').addClass('button').html(ninth_row));
+              //           } else {
+              //               newRow.append($('<td>').addClass('button').html(ninth_row_login));
+              //           }
+
+              //         // Append the new row to the table body
+              //         $('.table-data tbody').append(newRow);
+              //            count++;
+              //     });
+              // } else {
+              //     console.error("Invalid response format. Expected an array.");
+              // }
+          },
+            error: function(xhr, status, error) {
+      console.error("Error fetching data:", error);
+      console.log("Response Text:", xhr.responseText); // Log the response text for debugging
+  }
+      });
+  } 
+
+
+
+  // fetchDataFromUrl('https://devsvedberga.com/svedberga_business/sv_com/sv_filter_file.php', currentPage);
+
+
+  function addToCart(button) {
+      var variantId = parseInt(button.getAttribute('variant_id'));; 
+      console.log('variant id is ', variantId);
+                
+      // console.log('variant id is ', variantId);
+    
+      $.ajax({
+          type: 'POST',
+          url: '/cart/add.js',
+          data: {
+              quantity: 1, //unit_qty
+              id: variantId
+          },
+          dataType: 'json',
+          success: function(response) {
+              console.log('Product added to cart:', response);
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
+              console.error('Error adding product to cart:', errorThrown);
+          }
+      });
+  }
+
+      //initializing global variables for fn sorting fetch data
+      var selectedOptionText = ''; 
+      var isAnyCheckboxChecked = '';
+      var attribute = '';  
+
+
+  $(document).ready(function() {
+    $('.selectfilter').change(function() {
+
+      selectedOptionText = $(this).find('option:selected').text(); 
+      isAnyCheckboxChecked = $('.filter_row input[type="checkbox"]:checked').length > 0;
+      attribute = isAnyCheckboxChecked ? 'checked' : 'not checked';  
+      //  minValStr = $('.min-input').val();
+      //  maxValStr = $('.max-input').val();
+
+      // // Parse as integers, handling potential errors
+      //  minVal = parseInt(minValStr); // Use empty string if parsing fails
+      //  maxVal = parseInt(maxValStr) || '';
+
+  //      sortingFlag = true;
+
+  // sorting_fetch_data(1, selectedOptionText, attribute, minVal, maxVal); 
+
+      fetchDataFromUrl('https://devsvedberga.com/svedberga_business/sv_com/sv_filter_file.php', currentPage); 
+
+  });
+
+  });
+
+
+  // updated code : 
+
+      var currentPage = 1;
+      var totalPages = 0;
+
+      // Function to fetch data for a specific page
+      function fetchData(page) {
+          $.ajax({
+              url: "https://devsvedberga.com/svedberga_business/filters/frontend_filter/backend.php",
+              type: "GET",
+              data: { page: page },
+              dataType: "json",
+              success: function(response) { 
+                // console.log(response);
+                  totalPages = response.totalPages;
+                  updatePagination();  // Update pagination links based on the fetched data 
+                  append_paginated_data(response);
+              },
+              error: function(xhr, status, error) {
+                  console.error("Error fetching data:", error);
+              }
+          });
+      } 
+
+      // Function to fetch data for a specific page but it's for sorting buttons 
+        //     function sorting_fetch_data(page) { 
+
+      
+              
+        //       console.log('sorting fetch fn called !');
+        //     $.ajax({
+        //         url: "https://devsvedberga.com/svedberga_business/filters/frontend_filter/sorting_query.php",
+        //         type: "POST",
+        //         data: { page: page ,
+        //         optionText: selectedOptionText,
+        //         attribute: attribute, // Include attribute data here
+        //         minVal: minVal, // Send parsed integers
+        //         maxVal: maxVal},
+        //         dataType: "json",
+        //         success: function(response) { 
+        //            console.log(response);
+        //             totalPages = response.totalPages;
+        //             updatePagination();  // Update pagination links based on the fetched data 
+        //             append_paginated_data(response);
+        //         },
+        //         error: function(xhr, status, error) {
+        //             console.error("Error fetching data:", error);
+        //         }
+        //     });
+        // }
+
+      // Function to change the current page
+    
+
+      // Function to update pagination links
+      function updatePagination() {
+    var paginationContainer = $("#pagination-container");
+    paginationContainer.empty(); // Clear previous pagination
+    
+    // Add previous button
+    if (currentPage > 1) {
+        paginationContainer.append("<li class='prev'><a href='javascript:void(0);' class='prev'>Previous</a></li>");
+        console.log('more than 1 if');
+    }
+
+    // Add first page button
+    paginationContainer.append("<li class='pagination-item'><a href='javascript:void(0);' class='" + (currentPage === 1 ? 'active' : '') + "'>1</a></li> ");
+
+    // Add ellipsis if required
+    if (currentPage > 4) {
+        paginationContainer.append("... ");
+        console.log('more than 4 if')
+    }
+
+    // Calculate start and end for middle page buttons
+    var start = Math.max(2, currentPage - 2);
+    var end = Math.min(currentPage + 2, totalPages);
+
+    // Add middle page buttons
+    for (var i = start; i <= end; i++) {
+        var activeClass = (i === currentPage) ? "active" : "";
+        paginationContainer.append("<li class='pagination-item' data-page='" + i + "'><a href='javascript:void(0);' class='" + activeClass + "'>" + i + "</a></li> ");
+    }
+
+    // Add ellipsis if required
+    if (currentPage < totalPages - 3) {
+        paginationContainer.append("... ");
+    }
+
+    // Add last page button
+    if (totalPages > 1) {
+        paginationContainer.append("<li class='pagination-item'><a href='javascript:void(0);' class='" + (currentPage === totalPages ? 'active' : '') + "'>" + totalPages + "</a></li> ");
+    }
+
+    // Add next button
+    if (currentPage < totalPages) {
+        paginationContainer.append("<li class='next'><a href='javascript:void(0);' class='next'>Next</a></li>");
+    } 
+
+    var pageCount = {}; // Object to store page counts
+    
+    // Count occurrences of each page value
+    $(".pagination-item a").each(function() {
+        var pageValue = $(this).text();
+        pageCount[pageValue] = (pageCount[pageValue] || 0) + 1;
+    });
+    
+    // Hide duplicate pagination items
+    $(".pagination-item a").each(function() {
+        var pageValue = $(this).text();
+        if (pageCount[pageValue] > 1) {
+            $(this).closest(".pagination-item").hide();
+            pageCount[pageValue]--; // Decrease count
+        }
+    });
+    
+   
+
+}
+
+    
+  // // Function to handle sorting and update data
+  // function handleSorting() {
+  //     sortingFlag = true;
+  //     // Fetch sorted data for the first page
+  //     sorting_fetch_data(1);
+  // }
+
+
+      
+  function changePage(page) {
+
+      currentPage = page;
+      if (sortingFlag) {
+          sorting_fetch_data(currentPage); // Fetch sorted data for the selected page
+      } else {
+          // fetchData(currentPage); // Fetch data for the selected page
+        fetchDataFromUrl('https://devsvedberga.com/svedberga_business/sv_com/sv_filter_file.php', currentPage);
+      }
+  } 
+      // Event listener for pagination links
+      $(document).on("click", "#pagination-container a", function() {
+          var page = parseInt($(this).text()); // Get the page number from the clicked link 
+            console.log('current page is' , page);
+          if (!isNaN(page)) {
+              changePage(page); // Change to the selected page
+          } else if ($(this).hasClass("prev")) {
+              changePage(currentPage - 1); // Change to previous page
+          } else if ($(this).hasClass("next")) {
+              changePage(currentPage + 1); // Change to next page
+          }
+      }); 
+
+
+        function append_paginated_data(response){ 
+            $('.table-data tbody').empty();
+
+          if(response.records.length <= 0){ 
+ 
+  $('.table-data tbody').html('<tr colspan="10"><td colspan="10"><p id="total_prds" style="column-span: all; width: 100%; margin: auto; text-align: center;">No products found</p></td></tr>'); 
+ $('#pagination-container').hide();
+
+            }
+          
+          
+                if (response.hasOwnProperty('records')) { 
+                       $('#pagination-container').show();
+                      $.each(response.records, function(index, product) { 
+                      // Provided HTML strings for each row
+                      var first_row = '<div style="display:none;" class="arrow arrow-rotate" onclick="this.classList.toggle(\'arrow-rotate\');"><i class="fa fa-angle-right plus"></i><i class="fa fa-angle-down minus"></i></div>';
+                      var second_row = '<form method="post" action="/cart/add" id="quick-add-template--' + product.product_id + '-quick-add-form_x" accept-charset="UTF-8" class="f8pr form-card cart-initialized" enctype="multipart/form-data" novalidate="novalidate"><input type="hidden" name="form_type" value="product" style="z-index: 78;"><input type="hidden" name="utf8" value="✓" style="z-index: 77;"><fieldset style="z-index: 76;"><div class="quen-cart" style="z-index: 75;"><input type="hidden" name="id" value="' + product.variant_id + '"><span class="input-amount semantic-input-initialized"><span class="semantic-amount"><label for="quantity-quick-add-template--' + product.product_id + '-quick-add-form_x" class="hidden">Antal</label><input type="number" quantity_btn="" id="quantity-quick-add-template--' + product.product_id + '-quick-add-form_x" class="filter_input_val" name="quantity" value="1" required=""><span id="inventory_span" style="display:none;"> Value must be less than or equal to ' + product.variant_inventory_quantity + '</span><a class="incr" onclick="increaseQuantity(this)" aria-label="Increase by 1"></a><a class="decr " onclick="decreaseQuantity(this)" aria-label="Decrease by 1"></a></span></span><button style="display:none;" type="submit" metafield_json=""' + product.metafield.unit_qty + '" class="overlay-tertiary"><span class="mobile-hide">Lägg till i kundvagn </span><i aria-hidden="true" class="icon-cart mobile-only"></i></button></div></fieldset><input type="hidden" name="product-id" value="' + product.product_id + '"><input type="hidden" name="section-id" value="template--' + product.product_id + '"></form>';
+
+                      var metafield_data = product.metafield; 
+                      var parsed_metafield_data = JSON.parse(metafield_data);
+                      unit_qty = parsed_metafield_data.unit_qty;
+
+                      // console.log('metafield data is ', metafield_data);
+
+                      var third_row = '<span class="number"> X '+ unit_qty +' <input type="hidden" class="unit_qty" value="'+ unit_qty +'"></span>';
+                      var fourth_row = '<p class="title1"><a href="/products/' + product.handle + '">' + product.title + '</a></p><p class="title2">' + product.vendor + '</p>';
+                      var fifth_row = '<span class="r6rt rating-initialized" data-val="" data-of="5"><span class="rating"><span class="star"><span class="fill" style="width: 0%;"></span></span><span class="star"><span class="fill" style="width: 0%;"></span></span><span class="star"><span class="fill" style="width: 0%;"></span></span><span class="star"><span class="fill" style="width: 0%;"></span></span><span class="star"><span class="fill" style="width: 0%;"></span></span></span><span class="rating-label"></span></span>';
+                      var sixth_row = '<span class="sku">' + product.variant_sku + '</span>';
+                      var seventh_row = '<p class="price1">Login</p>'; 
+                      
+                    var roundedPrice = Math.round(parseFloat(product.variant_price)); // Rounding to the nearest whole number
+                    var vatIncludePrice = roundedPrice;
+                   var roundedVatIncludePrice = vatIncludePrice;
+                    var roundedVatIncludePrice = Math.round(vatIncludePrice);
+                    
+                    var seventh_row_login = '<p class="price1">'+ roundedVatIncludePrice +' kr:- Inkl moms</p>';
+
+                      var image_src = product.image_src || 'https://cdn.shopify.com/s/files/1/0517/3261/1228/files/BlankImagefornoProductImage.jpg?v=1712293396';
+                      var eight_row = '<img src="' + image_src + '">';
+
+                      var ninth_row = '<button class="add-to-cart" onclick="adc_fn(this)" id="cust_adc" variant_id="'+ product.variant_id +'" customer_id="{{ customer.id }}"><i class="fa fa-sign-in"></i></button>'; 
+                      var ninth_row_login = `<button class="add-to-cart" variant_id="${product.variant_id}" onmousedown="" id="cust_adc" onclick="handleAddToCartClick(this, ${unit_qty}, '${product.handle}'), addToCartClicked(this)"><i class="fa fa-shopping-cart"></i></button>`
+
+
+                      // Create a new row for each product
+                      var newRow = $('<tr>');
+                      // Append each product's data to the respective columns in the row
+                      newRow.append($('<td>').addClass('sno-heading arrow-drop').html(first_row));
+                      newRow.append($('<td>').addClass('Quantity-heading').html(second_row));
+                      newRow.append($('<td>').addClass('varient order').html(third_row));
+                      newRow.append($('<td>').addClass('title plantname').html(fourth_row));
+                      // newRow.append($('<td>').addClass('review').html(fifth_row));
+                      newRow.append($('<td>').addClass('sku').html(sixth_row));
+
+                      newRow.append($('<td>').addClass('price price-design').html(seventh_row_login));
+                        
+
+                      newRow.append($('<td>').addClass('picture').html(eight_row)); 
+                      
+                     
+                            newRow.append($('<td>').addClass('button').html(ninth_row_login));
+                        
+
+                      // Append the new row to the table body
+                      $('.table-data tbody').append(newRow);
+                  })
+
+                  $('#filter_results_counter').text(`${response.count} products`);
+                  
+                } else {
+          console.log('Error: No records found in the response');
+      }
+        }
+  
+    
+
+      // Initial data fetch for the first page
+      // fetchData(currentPage);
+
+  // price slider complete functionality
+
+    var minValStr = '' ;
+      var maxValStr = '';
+
+       var collection_id = $('.custom_filter').eq(0).attr('collection_id');
+
+  $(document).ready(function() {
+    const $rangeValue = $(".slider-container .price-slider");
+    const $rangeInputValue = $(".range-input input"); 
+    //intially set min value to zero and max to 
+    $rangeInputValue.eq(0).val(0);
+    $rangeInputValue.eq(1).val(100000);
+    // Set the price gap 
+    let priceGap = 500;
+
+    var debounceTimer;
+
+    // Abhishek's Fn to send min and max value
+    function logMinMaxValues() {
+
+      $('.clr_all_btn').show();
+
+    clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(function() {
+        
+      var minVal = parseInt($rangeInputValue.eq(0).val());
+      var maxVal = parseInt($rangeInputValue.eq(1).val());
+      console.log("Min Value:", minVal);
+      console.log("Max Value:", maxVal);
+
+        maxValStr = maxVal;
+        minValStr = minVal;
+
+
+        fetchDataFromUrl('https://devsvedberga.com/svedberga_business/sv_com/sv_filter_file.php', currentPage, collection_id);
+      
+      // let isAnyCheckboxChecked = $('.filter_row input[type="checkbox"]:checked').length > 0;
+      // let attribute = isAnyCheckboxChecked ? 'checked' : 'not checked';
+
+      // Send min, max values, and attribute to PHP file via AJAX
+  //      function price_slider_fetch(url, logResponse) {
+  //     $.ajax({
+  //         url: url,
+  //         type: 'POST',
+  //         data: { min: minVal, max: maxVal, attribute: attribute },
+  //         success: function(response) {
+  //             if (logResponse) {
+  //                 console.log('Response from ' + url + ':', response);  
+  //                 // fetchDataFromUrl('https://devsvedberga.com/svedberga_business/filters/frontend_filter/price_slider.php');  
+  //                  setTimeout(function(){ 
+  //                       $('.primary-pagenation').hide();
+  //                       // appendDataToTableSlider(response);  
+  //                          setTimeout(function(){
+  //                       fetchData(currentPage);
+  //                            }, 1500);
+
+  //                     }, 1000);
+  //                  }
+  //         },
+  //         error: function(xhr, status, error) {
+  //             console.error('Error:', error);
+  //         }
+  //     });
+  // }
+
+  // price_slider_fetch('https://devsvedberga.com/svedberga_business/filters/frontend_filter/backend.php', false);
+
+  // price_slider_fetch('https://devsvedberga.com/svedberga_business/filters/frontend_filter/price_slider.php', true);
+      }, 1000); // Delay of 5 minutes (300,000 milliseconds)
+
+
+
+
+  }
+
+    let isInputChangeHandled = false;
+    // Adding event listeners to price input elements 
+    $(".price-input input").on("input", function(e) { 
+      if (isInputChangeHandled) return;
+    
+      let minp = parseInt($(".price-input .min-input").val());
+      let maxp = parseInt($(".price-input .max-input").val());
+      let diff = maxp - minp;
+
+      if (minp < 0) {
+        alert("minimum price cannot be less than 0");
+        $(".price-input .min-input").val(0);
+        minp = 0;
+      }
+
+      if (maxp > 100000) {
+        alert("maximum price cannot be greater than 100000");
+        $(".price-input .max-input").val(100000);
+        maxp = 100000;
+      }
+
+      if (minp > maxp - priceGap) {
+        $(".price-input .min-input").val(maxp - priceGap);
+        minp = maxp - priceGap;
+
+        if (minp < 0) {
+          $(".price-input .min-input").val(0);
+          minp = 0;
+        }
+      }
+
+      if (diff >= priceGap && maxp <= $rangeInputValue[1].max) {
+        if ($(this).hasClass("min-input")) {
+          $rangeInputValue.eq(0).val(minp);
+          let value1 = $rangeInputValue.eq(0).attr("max");
+          $rangeValue.css("left", `${(minp / value1) * 100}%`);
+        } else {
+          $rangeInputValue.eq(1).val(maxp);
+          let value2 = $rangeInputValue.eq(1).attr("max");
+          $rangeValue.css("right", `${100 - (maxp / value2) * 100}%`);
+        }
+      }
+      
+      // Log min and max values
+      logMinMaxValues();
+    });
+
+    // Add event listeners to range input elements 
+    $rangeInputValue.on("input", function() {
+      let minVal = parseInt($rangeInputValue.eq(0).val());
+      let maxVal = parseInt($rangeInputValue.eq(1).val());
+      let diff = maxVal - minVal;
+
+      if (diff < priceGap) {
+        if ($(this).hasClass("min-range")) {
+          $rangeInputValue.eq(0).val(maxVal - priceGap);
+        } else {
+          $rangeInputValue.eq(1).val(minVal + priceGap);
+        }
+      } else {
+        $(".price-input .min-input").val(minVal);
+        $(".price-input .max-input").val(maxVal);
+        $rangeValue.css("left", `${(minVal / $rangeInputValue.eq(0).attr("max")) * 100}%`);
+        $rangeValue.css("right", `${100 - (maxVal / $rangeInputValue.eq(1).attr("max")) * 100}%`);
+      }
+        isInputChangeHandled = false;
+      // Log min and max values
+      logMinMaxValues();
+    });
+
+    // Additional event listener for slider change
+    $(".price-slider").on("change", logMinMaxValues);
+
+  });
+
+
+  // redirect to login page :
+
+  function adc_fn() {
+      window.location.href = "https://svedbergaplantskola.se/account/login";
+  }
+
+  // close fn code
+  $(document).ready(function() { 
+      
+      $('.side-filter-design').hide();
+      $('.cust_filter_fn').show();
+      
+      $('.cust_filter_fn').click(function() {
+          $(this).hide();
+          $('.side-filter-design').show(); 
+          // $('.close-icon').show();
+      });
+
+      $('.close-icon').click(function() {
+          // $(this).hide();
+          $('.side-filter-design').hide();
+          $('.cust_filter_fn').show();
+      });
+  });
+
+  // Clear all fn : 
+
+  $('.clr_all_btn').click(function(){
+
+    window.location.reload();
+      $(this).hide();
+      $(".filter_attribute").prop("checked", false); 
+
+    $(".range-input input").eq(0).val(0);
+
+    $(".range-input input").eq(1).val(100000);
+
+    $('.min-input').val(0);
+    $('.max-input').val(100000);
+
+      filter_type = {}; 
+  var collection_id = $('.custom_filter').eq(0).attr('collection_id');
+
+  if(collection_id){
+
+    filter_type['collection_id'] = collection_id;
+
+  }
+    
+    filter_type['attribute'] = 'not checked';
+
+    var filter_type_json = JSON.stringify(filter_type); 
+
+
+      $.ajax({
+              url: 'https://devsvedberga.com/svedberga_business/sv_com/filter_data_get.php',
+              type: 'POST',
+              contentType: 'application/json',
+              data: filter_type_json,
+              success: function(response) {
+                  console.log('Data posted successfully:', response);
+                  setTimeout(function() {
+                      fetchDataFromUrl('https://devsvedberga.com/svedberga_business/sv_com/sv_filter_file.php', currentPage);  
+                    // setTimeout(function(){
+                    //    fetchData(currentPage);
+                    //  }, 1500);
+
+                    
+                      
+                  }, 1000);
+              },
+              error: function(xhr, status, error) {
+                  console.error('Error posting data:', error);
+              }
+          });
+
+      
+  }) 
+
+
+// Add to cart and inventory bug : 
+
+function addToCartClicked(button) {
+    console.log('fn clicked ?');
+    var variantId = $(button).attr('variant_id');
+    var inventoryQty = parseInt($(button).attr('inventory_qty'));
+    var inventorySpan = $(button).closest('tr').find('#inventory_span'); 
+    console.log('inventory span is', inventorySpan);
+
+    // Fetch cart data
+    $.ajax({
+        type: 'GET',
+        url: '/cart.js',
+        dataType: 'json',
+        success: function(cartData) {
+            
+            var totalQuantityInCart = 0;
+            cartData.items.forEach(function(item) {
+                if (item.variant_id == variantId) {
+                    totalQuantityInCart += item.quantity;
+                }
+            });
+            
+            var remainingInventory = inventoryQty - totalQuantityInCart;
+            
+            var message = '';
+            if (remainingInventory > 0) {
+                message = 'You can add ' + remainingInventory + ' more items to your cart.';
+            } else {
+                message = 'Inventory reached, All items have been added to your cart.';
+            }
+            
+            // Update the inventorySpan element with the message and show it
+            inventorySpan.text(message).fadeIn();
+
+            // Hide the message after a delay
+            setTimeout(function() {
+                inventorySpan.fadeOut();
+            }, 4000); 
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.error('Error fetching cart data:', errorThrown);
+        }
+    });
+} 
+
+// incr and decr qty :  
+
+function increaseQuantity(element) {
+    var parentForm = element.closest('form');
+    var quantityInput = parentForm.querySelector('input[name="quantity"]');
+    var currentValue = parseInt(quantityInput.value);
+    quantityInput.value = currentValue + 1;
+}
+
+function decreaseQuantity(element) {
+    var parentForm = element.closest('form');
+    var quantityInput = parentForm.querySelector('input[name="quantity"]');
+    var currentValue = parseInt(quantityInput.value);
+    var inventorySpan = parentForm.querySelector('.inventory_span');
+    if (currentValue > 1) {
+        quantityInput.value = currentValue - 1;
+        element.classList.remove('disabled');
+    } else {
+        element.classList.add('disabled');
+    }
+}
+
+

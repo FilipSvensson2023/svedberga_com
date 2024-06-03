@@ -1,0 +1,256 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "hide_mobile": false
+      }
+    },
+    "04b9d347-62a2-4ca3-9b35-fcff484719c9": {
+      "type": "section-slideshow",
+      "blocks": {
+        "template--19495877214531__04b9d347-62a2-4ca3-9b35-fcff484719c9-slide-1": {
+          "type": "slide",
+          "settings": {
+            "layout": "background",
+            "overlay_opacity": 0,
+            "color_palette": "dark",
+            "button_color_palette": "light",
+            "video": "shopify:\/\/files\/videos\/Jord.mov",
+            "text_position": "text-center",
+            "title_size": "size-50",
+            "title": "Hemleverans av jord med fri frakt.",
+            "text": "<h2><strong>Smidigt, Prisvärt & Snabbt.<\/strong><\/h2><p>Prisgaranti, hittar du billigare som inkluderar hemleverans så matchar vi det.<br\/><em>Fri frakt gäller produkter som levereras på fulla pallar.<\/em><\/p>",
+            "link_text": "",
+            "link_url": "",
+            "show_link": true,
+            "title_size_mobile": "mobile-size-18"
+          }
+        }
+      },
+      "block_order": [
+        "template--19495877214531__04b9d347-62a2-4ca3-9b35-fcff484719c9-slide-1"
+      ],
+      "settings": {
+        "height": "m",
+        "width": "wide",
+        "autoplay": false,
+        "autoplay_seconds": 3,
+        "enable_controls": false,
+        "height_mobile": "m",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    },
+    "5b59b827-3040-4e63-b771-073d2fcf0104": {
+      "type": "section-icon-text-blocks",
+      "blocks": {
+        "template--20387102556483__5b59b827-3040-4e63-b771-073d2fcf0104-text-1": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "image": "shopify:\/\/shop_images\/Hasselfors-1.jpg",
+            "image_svg": "",
+            "image_height": 180,
+            "title": "Hasselfors Garden",
+            "text": "",
+            "link_text": "Se alla produkter från Hasselfors",
+            "link_url": "shopify:\/\/collections\/hasselfors",
+            "button_color_palette": "dark",
+            "show_link": false
+          }
+        },
+        "template--20387102556483__5b59b827-3040-4e63-b771-073d2fcf0104-text-2": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "image": "shopify:\/\/shop_images\/Emmaljunga-1.jpg",
+            "image_svg": "",
+            "image_height": 180,
+            "title": "Emmaljunga Jord",
+            "text": "",
+            "link_text": "Se alla produkter från Emmaljunga",
+            "link_url": "shopify:\/\/collections\/emmaljunga",
+            "button_color_palette": "dark",
+            "show_link": false
+          }
+        },
+        "24141dcd-54ec-49f7-8c70-62a3378b64cb": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "image": "shopify:\/\/shop_images\/Magnedol.jpg",
+            "image_svg": "",
+            "image_height": 180,
+            "title": "Magnedol",
+            "text": "",
+            "link_text": "Se alla produkter från Magnedol",
+            "link_url": "shopify:\/\/collections\/magnedol",
+            "button_color_palette": "dark",
+            "show_link": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20387102556483__5b59b827-3040-4e63-b771-073d2fcf0104-text-1",
+        "template--20387102556483__5b59b827-3040-4e63-b771-073d2fcf0104-text-2",
+        "24141dcd-54ec-49f7-8c70-62a3378b64cb"
+      ],
+      "settings": {
+        "items_width": 4,
+        "text_alignment": "start",
+        "title_size": "h1",
+        "title": "",
+        "text": "",
+        "link_text": "Button",
+        "link_url": "",
+        "button_color_palette": "accent",
+        "show_link": false,
+        "blocks_text_alignment": "center",
+        "blocks_title_size": "h2",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    },
+    "e1113dbd-7f6c-4159-b428-803aa8877fa7": {
+      "type": "section-collection-list",
+      "disabled": true,
+      "settings": {
+        "collections": [
+          "alcea",
+          "bukettlilja",
+          "cyclamen",
+          "daglilja-1",
+          "dahlia",
+          "engelsk-klockhyacint",
+          "flox",
+          "gladiolus",
+          "hibiskus",
+          "honungslok",
+          "incarvillea",
+          "iris",
+          "ipheion",
+          "ixia",
+          "kniphofia",
+          "skugglilja",
+          "lyckoklover",
+          "lupiner",
+          "lililum",
+          "pioner",
+          "praktklocka",
+          "physalis",
+          "ranunkel",
+          "rose-of-jericho",
+          "sparaxis",
+          "vallmo",
+          "atbara"
+        ],
+        "image_ratio": "square",
+        "fill_images": true,
+        "layout": "rows",
+        "number_of_items": 8,
+        "text_alignment": "start",
+        "title_size": "h1",
+        "title": "För plantering på våren",
+        "link_text": "Se alla",
+        "link_url": "shopify:\/\/collections\/varlokar",
+        "button_color_palette": "dark",
+        "show_link": false,
+        "collection_title_size": "p",
+        "mobile_layout": "slider",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "text_alignment": "left"
+          }
+        },
+        "423fb7f6-2c97-4420-8211-d45378349d2a": {
+          "type": "description",
+          "settings": {
+            "text_alignment": "left",
+            "enable_read_more": true
+          }
+        },
+        "sorting": {
+          "type": "sorting",
+          "settings": {
+          }
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "423fb7f6-2c97-4420-8211-d45378349d2a",
+        "sorting",
+        "product_grid"
+      ],
+      "settings": {
+        "pagination_qty": 48,
+        "pagination_type": "button",
+        "show_amount_of_products_in_collection": true,
+        "productview_type": "grid",
+        "products_per_row": 4,
+        "show_collection_image": false,
+        "enable_filters": true,
+        "enable_menu": true,
+        "filters_menu_alignment": "left",
+        "filter_menu": "",
+        "filter_sticky": true,
+        "filters_show_more_limit": 10,
+        "enable_quick_buy_desktop": true,
+        "enable_quick_buy_mobile": true,
+        "enable_quick_buy_drawer": false,
+        "enable_quick_buy_qty_selector": true,
+        "enable_color_picker": false,
+        "enable_quick_buy_compact": true,
+        "products_per_row_mobile": "2",
+        "filter_mobile_sticky": false
+      }
+    },
+    "a2f28408-e378-4655-83fe-101db4b8ffa8": {
+      "type": "section-featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "",
+        "layout": "slider",
+        "limit": 5,
+        "number_of_items": 5,
+        "text_alignment": "start",
+        "title_size": "h1",
+        "title": "Featured collection",
+        "text": "<p>Share information and details about this collection<\/p>",
+        "link_text": "View all",
+        "button_color_palette": "accent",
+        "show_link": false,
+        "enable_quick_buy_desktop": true,
+        "enable_quick_buy_mobile": true,
+        "enable_quick_buy_drawer": false,
+        "enable_quick_buy_qty_selector": true,
+        "enable_color_picker": false,
+        "enable_quick_buy_compact": false,
+        "mobile_layout": "slider",
+        "spacing_desktop": 50,
+        "spacing_mobile": 30
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "04b9d347-62a2-4ca3-9b35-fcff484719c9",
+    "5b59b827-3040-4e63-b771-073d2fcf0104",
+    "e1113dbd-7f6c-4159-b428-803aa8877fa7",
+    "main-collection",
+    "a2f28408-e378-4655-83fe-101db4b8ffa8"
+  ]
+}
