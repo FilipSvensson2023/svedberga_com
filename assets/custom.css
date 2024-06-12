@@ -338,9 +338,9 @@
 
 /* Table Product page css start */
 
-#main-product .swiper-custom-pagination {
+/* #main-product .swiper-custom-pagination {
     position: relative;
-}
+} */
 #main-product .swiper-custom-pagination .swiper-button-nav {
     height: 100%!important;
     margin: 0;
