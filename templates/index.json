@@ -1,10 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "section_countdown_gaJw6t": {
       "type": "section-countdown",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Vepa---400-x-150-2.jpg",
+        "image": "shopify://shop_images/Vepa---400-x-150-2.jpg",
         "overlay_opacity": 35,
         "height": "m",
         "width": "wide",
@@ -14,16 +23,16 @@
         "button_color_palette": "accent",
         "text_position": "start",
         "title_size": "h1",
-        "title": "<strong>Lagertömning av vårlökar, knölar & fröer. Allt ska bort!<\/strong>",
-        "text": "<h4><strong>Vi inventerar just nu kvarvarande lager av vårlökar, knölar & fröer. 13\/4 klockan 15:00 startar vi årets stora utförsäljning, passa på att fynda till kraftigt rabatterade priser.<\/strong><\/h4>",
+        "title": "<strong>Lagertömning av vårlökar, knölar & fröer. Allt ska bort!</strong>",
+        "text": "<h4><strong>Vi inventerar just nu kvarvarande lager av vårlökar, knölar & fröer. 13/4 klockan 15:00 startar vi årets stora utförsäljning, passa på att fynda till kraftigt rabatterade priser.</strong></h4>",
         "link_text": "",
-        "link_url": "shopify:\/\/collections",
+        "link_url": "shopify://collections",
         "show_link": false,
         "countdown_start": "",
         "countdown_end": "April 13th, 15:00",
         "hide_banner_after_countdown": false,
-        "ended_title": "<strong>Lagertömning av vårlökar, knölar & fröer. Allt ska bort!<\/strong>",
-        "ended_text": "<p><\/p><p><\/p>",
+        "ended_title": "<strong>Lagertömning av vårlökar, knölar & fröer. Allt ska bort!</strong>",
+        "ended_text": "<p></p><p></p>",
         "spacing_desktop": 50,
         "spacing_mobile": 30
       }
@@ -39,13 +48,13 @@
             "overlay_opacity": 0,
             "color_palette": "black",
             "button_color_palette": "white",
-            "video": "shopify:\/\/files\/videos\/AdobeStock_342463743.mov",
+            "video": "shopify://files/videos/AdobeStock_342463743.mov",
             "text_position": "text-center",
             "title_size": "size-50",
             "title": "Sveriges största sortiment av knölar & lökar.",
             "text": "",
             "link_text": "",
-            "link_url": "shopify:\/\/collections\/varlokar",
+            "link_url": "shopify://collections/varlokar",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -58,13 +67,13 @@
             "overlay_opacity": 0,
             "color_palette": "black",
             "button_color_palette": "dark",
-            "video": "shopify:\/\/files\/videos\/AdobeStock_481048401.mov",
+            "video": "shopify://files/videos/AdobeStock_481048401.mov",
             "text_position": "align-bottom text-start",
             "title_size": "size-50",
             "title": "70% RABATT",
-            "text": "<p>LAGERRENSNING AV HÖSTLÖKAR <\/p>",
+            "text": "<p>LAGERRENSNING AV HÖSTLÖKAR </p>",
             "link_text": "Se hela sortimentet",
-            "link_url": "shopify:\/\/collections\/lokar",
+            "link_url": "shopify://collections/lokar",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -72,17 +81,17 @@
         "slide_EjFaLy": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Kampanj-5.jpg",
+            "image": "shopify://shop_images/Kampanj-5.jpg",
             "layout": "background",
             "overlay_opacity": 0,
             "color_palette": "black",
             "button_color_palette": "light",
             "text_position": "align-bottom text-center",
             "title_size": "h1",
-            "title": "<strong>20% rabatt & Fri frakt på alla jordsorter från Emmaljunga.<\/strong>",
+            "title": "<strong>20% rabatt & Fri frakt på alla jordsorter från Emmaljunga.</strong>",
             "text": "",
             "link_text": "",
-            "link_url": "shopify:\/\/collections\/emmaljunga",
+            "link_url": "shopify://collections/emmaljunga",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -93,9 +102,7 @@
         "template--19480647565635__b935e871-cac9-4737-9678-7e5d14acc7df-slide-1",
         "slide_EjFaLy"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "height": "m",
         "width": "wide",
@@ -128,7 +135,7 @@
         "title": "Jord med fri hemleverans.",
         "text": "",
         "link_text": "",
-        "link_url": "\/",
+        "link_url": "/",
         "button_color_palette": "accent",
         "show_link": false,
         "enable_quick_buy_desktop": true,
@@ -148,16 +155,16 @@
         "image_AMchPe": {
           "type": "image",
           "settings": {
-            "video": "shopify:\/\/files\/videos\/AdobeStock_518281004.mov",
+            "video": "shopify://files/videos/AdobeStock_518281004.mov",
             "overlay_opacity": 20,
             "color_palette": "white",
             "button_color_palette": "dark",
             "text_position": "text-center",
             "title_size": "h2",
             "title": "Knölar & lökar att plantera i vår",
-            "text": "<p>Dahlia, Liljor, Gladiolus, Iris, Cyclamen, Potatis m.m<\/p>",
+            "text": "<p>Dahlia, Liljor, Gladiolus, Iris, Cyclamen, Potatis m.m</p>",
             "link_text": "Se alla produkter",
-            "link_url": "shopify:\/\/collections\/varlokar",
+            "link_url": "shopify://collections/varlokar",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -165,16 +172,16 @@
         "image_KXqjB6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Lagerrensning.jpg",
+            "image": "shopify://shop_images/Lagerrensning.jpg",
             "overlay_opacity": 20,
             "color_palette": "white",
             "button_color_palette": "dark",
             "text_position": "text-center",
             "title_size": "h2",
             "title": "Fynda produkter med 50% rabatt",
-            "text": "<p>Massor fina fynd som fyller på ditt förråd inför våren.<\/p>",
+            "text": "<p>Massor fina fynd som fyller på ditt förråd inför våren.</p>",
             "link_text": "Fynda!",
-            "link_url": "shopify:\/\/collections\/fyndhorna-hos-svedberga",
+            "link_url": "shopify://collections/fyndhorna-hos-svedberga",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -182,16 +189,16 @@
         "image_BVc39g": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2018_10_lead_bags-of-soil-and-containers_shutterstock_1147406384.jpg",
+            "image": "shopify://shop_images/2018_10_lead_bags-of-soil-and-containers_shutterstock_1147406384.jpg",
             "overlay_opacity": 20,
             "color_palette": "white",
             "button_color_palette": "dark",
             "text_position": "text-center",
             "title_size": "h2",
             "title": "Jord med fri hemleverans.",
-            "text": "<p>Spara på ryggen och få vårens jord levererad direkt hem till dig. Leveranstid 1-4 dagar.<\/p>",
+            "text": "<p>Spara på ryggen och få vårens jord levererad direkt hem till dig. Leveranstid 1-4 dagar.</p>",
             "link_text": "Beställ jord",
-            "link_url": "shopify:\/\/collections\/jord",
+            "link_url": "shopify://collections/jord",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -199,16 +206,16 @@
         "image_GBCz7a": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/vibrant-red-chili-peppers-held-by-young-female-farmer-are-testament-fruitful-harvest-spicy-flavorful-capsicum_984126-14528.jpg",
+            "image": "shopify://shop_images/vibrant-red-chili-peppers-held-by-young-female-farmer-are-testament-fruitful-harvest-spicy-flavorful-capsicum_984126-14528.jpg",
             "overlay_opacity": 20,
             "color_palette": "white",
             "button_color_palette": "dark",
             "text_position": "text-center",
             "title_size": "h2",
             "title": "Alla förer minst 50% rabatt",
-            "text": "<p>Denna vecka kör vi superpris på alla fröer.<\/p>",
+            "text": "<p>Denna vecka kör vi superpris på alla fröer.</p>",
             "link_text": "Se alla fröer",
-            "link_url": "shopify:\/\/collections\/froer",
+            "link_url": "shopify://collections/froer",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -216,16 +223,16 @@
         "image_Vbapci": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/GARDEN_May_2018_Press-9.jpg",
+            "image": "shopify://shop_images/GARDEN_May_2018_Press-9.jpg",
             "overlay_opacity": 20,
             "color_palette": "white",
             "button_color_palette": "dark",
             "text_position": "text-center",
             "title_size": "h2",
             "title": "Grönare gräsmatta med Algomin",
-            "text": "<p>Vi levererar hela Algomins sortiment.<\/p>",
+            "text": "<p>Vi levererar hela Algomins sortiment.</p>",
             "link_text": "Se allt från Algomin",
-            "link_url": "shopify:\/\/collections\/algomin",
+            "link_url": "shopify://collections/algomin",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -240,9 +247,9 @@
             "text_position": "text-center",
             "title_size": "h2",
             "title": "Promo banner",
-            "text": "<p>Describe a product or make an announcement<\/p>",
+            "text": "<p>Describe a product or make an announcement</p>",
             "link_text": "Button",
-            "link_url": "\/",
+            "link_url": "/",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -257,9 +264,9 @@
             "text_position": "text-center",
             "title_size": "h2",
             "title": "Promo banner",
-            "text": "<p>Describe a product or make an announcement<\/p>",
+            "text": "<p>Describe a product or make an announcement</p>",
             "link_text": "Button",
-            "link_url": "\/",
+            "link_url": "/",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -297,38 +304,38 @@
         "text_mMMkbK": {
           "type": "text",
           "settings": {
-            "text": "<p>Just nu kör vi en tävling på Facebook och instagram där du kan vinna 500kr att shoppa för i vår webshop. Tryck på knappen nedan för att läsa mer och deltaga i tävlingen.<\/p>"
+            "text": "<p>Just nu kör vi en tävling på Facebook och instagram där du kan vinna 500kr att shoppa för i vår webshop. Tryck på knappen nedan för att läsa mer och deltaga i tävlingen.</p>"
           }
         },
         "usp_E9zfHq": {
           "type": "usp",
           "disabled": true,
           "settings": {
-            "usp": "<p>Tell a unique detail about this image<\/p>"
+            "usp": "<p>Tell a unique detail about this image</p>"
           }
         },
         "usp_p6rknQ": {
           "type": "usp",
           "disabled": true,
           "settings": {
-            "usp": "<p>Tell a unique detail about this image<\/p>"
+            "usp": "<p>Tell a unique detail about this image</p>"
           }
         },
         "usp_EnLfhK": {
           "type": "usp",
           "disabled": true,
           "settings": {
-            "usp": "<p>Tell a unique detail about this image<\/p>"
+            "usp": "<p>Tell a unique detail about this image</p>"
           }
         },
         "buttons_8mgKyV": {
           "type": "buttons",
           "settings": {
             "link_text_1": "TÄVLA",
-            "link_url_1": "https:\/\/www.facebook.com\/svedberga",
+            "link_url_1": "https://www.facebook.com/svedberga",
             "button_color_palette_1": "black",
             "link_text_2": "Läs mer.",
-            "link_url_2": "https:\/\/www.facebook.com\/svedberga",
+            "link_url_2": "https://www.facebook.com/svedberga",
             "button_color_palette_2": "light",
             "show_link": false
           }
@@ -344,7 +351,7 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Tavling.jpg",
+        "image": "shopify://shop_images/Tavling.jpg",
         "overlay_opacity": 0,
         "color_palette": "white",
         "layout": "image-left",
@@ -462,7 +469,7 @@
         "template--19516121612611__6daec3c3-dd5b-4a2b-8cf1-ffd16c3db4ee-image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Dahlia_38kr.jpg",
+            "image": "shopify://shop_images/Dahlia_38kr.jpg",
             "overlay_opacity": 0,
             "color_palette": "dark",
             "button_color_palette": "dark",
@@ -471,7 +478,7 @@
             "title": "ALLA DAHLIA 38kr",
             "text": "",
             "link_text": "Se alla Dahliasorter",
-            "link_url": "https:\/\/svedberga.com\/collections\/dahlia\/Dahlia",
+            "link_url": "https://svedberga.com/collections/dahlia/Dahlia",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -479,16 +486,16 @@
         "image_yRYEMk": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/473623_1.jpg",
+            "image": "shopify://shop_images/473623_1.jpg",
             "overlay_opacity": 10,
             "color_palette": "dark",
             "button_color_palette": "dark",
             "text_position": "text-center",
             "title_size": "h1",
             "title": "FYNDHÖRNA",
-            "text": "<p>Produkter med minst 50% rabatt<\/p>",
+            "text": "<p>Produkter med minst 50% rabatt</p>",
             "link_text": "Se alla fynd",
-            "link_url": "shopify:\/\/collections\/fyndhorna-hos-svedberga",
+            "link_url": "shopify://collections/fyndhorna-hos-svedberga",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -496,14 +503,14 @@
         "f1045e71-1a47-411c-ba50-27c4a1088c1f": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/girl-in-pink-looking-down-at-grass.jpg",
+            "image": "shopify://shop_images/girl-in-pink-looking-down-at-grass.jpg",
             "overlay_opacity": 0,
             "color_palette": "black",
             "button_color_palette": "accent",
             "text_position": "text-center",
             "title_size": "size-50",
             "title": "Fri frakt",
-            "text": "<p>Vid beställningar över 499kr<\/p>",
+            "text": "<p>Vid beställningar över 499kr</p>",
             "link_text": "Button",
             "link_url": "",
             "show_link": false,
@@ -513,16 +520,16 @@
         "b2f2190a-c82b-40f3-92c4-67e175b19363": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Influenser.jpg",
+            "image": "shopify://shop_images/Influenser.jpg",
             "overlay_opacity": 0,
             "color_palette": "black",
             "button_color_palette": "black",
             "text_position": "align-top text-center",
             "title_size": "size-50",
             "title": "Influencers sökes",
-            "text": "<p><strong>Bli en ambassadör för Svedberga Plantskola AB.<\/strong><\/p>",
+            "text": "<p><strong>Bli en ambassadör för Svedberga Plantskola AB.</strong></p>",
             "link_text": "Ansök idag",
-            "link_url": "shopify:\/\/pages\/influenser-ansokan",
+            "link_url": "shopify://pages/influenser-ansokan",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -530,16 +537,16 @@
         "b8531030-0831-41f2-9b3d-493b92c3cf8f": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/220_nelson_garden_seeds_category_image.jpg",
+            "image": "shopify://shop_images/220_nelson_garden_seeds_category_image.jpg",
             "overlay_opacity": 0,
             "color_palette": "dark",
             "button_color_palette": "dark",
             "text_position": "align-top text-center",
             "title_size": "size-50",
             "title": "Kampanj på alla fröer.",
-            "text": "<p>Ta 5 paket frö betala endast för 4.<\/p>",
+            "text": "<p>Ta 5 paket frö betala endast för 4.</p>",
             "link_text": "Se alla fröer",
-            "link_url": "shopify:\/\/collections\/froer",
+            "link_url": "shopify://collections/froer",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -547,16 +554,16 @@
         "image_e3xKER": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/chilli-thai-hot-seeds-by-happy-valley-seeds-1_grande_jpg.webp",
+            "image": "shopify://shop_images/chilli-thai-hot-seeds-by-happy-valley-seeds-1_grande_jpg.webp",
             "overlay_opacity": 40,
             "color_palette": "dark_gradient",
             "button_color_palette": "black",
             "text_position": "text-center",
             "title_size": "size-50",
             "title": "CHILLI-VECKA 50%",
-            "text": "<p>Missa inte chansen att beställa billiga chilli-frön från Nelson Garden. Gäller vecka 7.<\/p>",
+            "text": "<p>Missa inte chansen att beställa billiga chilli-frön från Nelson Garden. Gäller vecka 7.</p>",
             "link_text": "Se allt med 50% rabatt",
-            "link_url": "shopify:\/\/collections\/fyndhorna-hos-svedberga",
+            "link_url": "shopify://collections/fyndhorna-hos-svedberga",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -594,19 +601,19 @@
           "type": "usp",
           "disabled": true,
           "settings": {
-            "usp": "<p>Just nu <strong>40% rabatt<\/strong> på alla höstlökar!<\/p>"
+            "usp": "<p>Just nu <strong>40% rabatt</strong> på alla höstlökar!</p>"
           }
         },
         "166029118628eefa48-1": {
           "type": "usp",
           "settings": {
-            "usp": "<p>Mer än <strong>50.000<\/strong> nöjda kunder :)<\/p>"
+            "usp": "<p>Mer än <strong>50.000</strong> nöjda kunder :)</p>"
           }
         },
         "166029118628eefa48-2": {
           "type": "usp",
           "settings": {
-            "usp": "<p>Prisgaranti på alla produkter.<\/p>"
+            "usp": "<p>Prisgaranti på alla produkter.</p>"
           }
         }
       },
@@ -615,9 +622,7 @@
         "166029118628eefa48-1",
         "166029118628eefa48-2"
       ],
-      "custom_css": [
-
-      ],
+      "custom_css": [],
       "settings": {
         "color_palette": "light_2",
         "layout": "slider",
@@ -634,17 +639,17 @@
         "1660291161347c9da8-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Varlokar.jpg",
-            "video": "shopify:\/\/files\/videos\/AdobeStock_518281004.mov",
+            "image": "shopify://shop_images/Varlokar.jpg",
+            "video": "shopify://files/videos/AdobeStock_518281004.mov",
             "overlay_opacity": 40,
             "color_palette": "dark",
             "button_color_palette": "white",
             "text_position": "align-bottom text-start",
             "title_size": "h1",
             "title": "Dahlia",
-            "text": "<p>Sensommarens favorit, välj bland 100-talsolika sorter.<\/p>",
+            "text": "<p>Sensommarens favorit, välj bland 100-talsolika sorter.</p>",
             "link_text": "Se alla",
-            "link_url": "shopify:\/\/collections\/dahlia",
+            "link_url": "shopify://collections/dahlia",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -652,16 +657,16 @@
         "1660291161347c9da8-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/visi173236.jpg",
+            "image": "shopify://shop_images/visi173236.jpg",
             "overlay_opacity": 20,
             "color_palette": "black",
             "button_color_palette": "white",
             "text_position": "align-bottom text-start",
             "title_size": "h2",
             "title": "Allium",
-            "text": "<p>Spektakulära blommor som drar ögonen till sig. <\/p>",
+            "text": "<p>Spektakulära blommor som drar ögonen till sig. </p>",
             "link_text": "Se alla",
-            "link_url": "shopify:\/\/collections\/allium",
+            "link_url": "shopify://collections/allium",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -669,16 +674,16 @@
         "1660291161347c9da8-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/visi172274.jpg",
+            "image": "shopify://shop_images/visi172274.jpg",
             "overlay_opacity": 20,
             "color_palette": "dark",
             "button_color_palette": "white",
             "text_position": "align-bottom text-start",
             "title_size": "h2",
             "title": "Narcissus",
-            "text": "<p>Inte bara gula Påskliljor<\/p>",
+            "text": "<p>Inte bara gula Påskliljor</p>",
             "link_text": "Se alla",
-            "link_url": "shopify:\/\/collections\/narcissus",
+            "link_url": "shopify://collections/narcissus",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -686,16 +691,16 @@
         "cd3bf115-f3b1-4d6a-9827-d2a76d0262bc": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/visi170992.jpg",
+            "image": "shopify://shop_images/visi170992.jpg",
             "overlay_opacity": 15,
             "color_palette": "dark",
             "button_color_palette": "white",
             "text_position": "align-bottom text-start",
             "title_size": "h1",
             "title": "Hyacinter",
-            "text": "<p>Underbara Hyacinter.<\/p>",
+            "text": "<p>Underbara Hyacinter.</p>",
             "link_text": "Se alla",
-            "link_url": "shopify:\/\/collections\/hyacinth",
+            "link_url": "shopify://collections/hyacinth",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -703,16 +708,16 @@
         "d295fa85-ac07-4fa5-8c3a-03bb60f14e2a": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/visi188520.jpg",
+            "image": "shopify://shop_images/visi188520.jpg",
             "overlay_opacity": 0,
             "color_palette": "dark",
             "button_color_palette": "white",
             "text_position": "align-bottom text-start",
             "title_size": "h1",
             "title": "Amaryllis",
-            "text": "<p>Julens favoriter.<\/p>",
+            "text": "<p>Julens favoriter.</p>",
             "link_text": "Se alla",
-            "link_url": "shopify:\/\/collections\/amaryllis",
+            "link_url": "shopify://collections/amaryllis",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -720,7 +725,7 @@
         "ee465ed2-6d3e-4a31-89a6-96683c6710e3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/visi199210.jpg",
+            "image": "shopify://shop_images/visi199210.jpg",
             "overlay_opacity": 0,
             "color_palette": "dark",
             "button_color_palette": "white",
@@ -729,7 +734,7 @@
             "title": "Liljor",
             "text": "",
             "link_text": "Se alla",
-            "link_url": "shopify:\/\/collections\/lililum",
+            "link_url": "shopify://collections/liljor",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -743,7 +748,7 @@
             "text_position": "text-center",
             "title_size": "h1",
             "title": "Image banner",
-            "text": "<p>Give customers details about the banner image(s)<\/p>",
+            "text": "<p>Give customers details about the banner image(s)</p>",
             "link_text": "Button",
             "link_url": "",
             "show_link": false,
@@ -806,8 +811,8 @@
       "type": "section-countdown",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Dahlia-2024.jpg",
-        "video": "shopify:\/\/files\/videos\/AdobeStock_342463743.mov",
+        "image": "shopify://shop_images/Dahlia-2024.jpg",
+        "video": "shopify://files/videos/AdobeStock_342463743.mov",
         "overlay_opacity": 70,
         "height": "xs",
         "width": "wide",
@@ -818,15 +823,15 @@
         "text_position": "center",
         "title_size": "size-50",
         "title": "20% rabatt på förbokningar.",
-        "text": "<p>Förboka dina favoriter med leverans våren 2024.<\/p>",
+        "text": "<p>Förboka dina favoriter med leverans våren 2024.</p>",
         "link_text": "",
-        "link_url": "shopify:\/\/collections\/varlokar",
+        "link_url": "shopify://collections/varlokar",
         "show_link": false,
         "countdown_start": "",
         "countdown_end": "November 30th, 11:59:59",
         "hide_banner_after_countdown": false,
         "ended_title": "Countdown banner",
-        "ended_text": "<p>Tell something about your offers, sale or discounts when the timer has ended.<\/p>",
+        "ended_text": "<p>Tell something about your offers, sale or discounts when the timer has ended.</p>",
         "spacing_desktop": 50,
         "spacing_mobile": 30
       }
@@ -868,12 +873,10 @@
       "type": "apps",
       "blocks": {
         "6490b72d-b568-48e2-b537-0ac04005c847": {
-          "type": "shopify:\/\/apps\/google-reviews\/blocks\/carousel-widget-block\/8b378e9e-c56d-47ce-a754-feca5e0caf59",
+          "type": "shopify://apps/google-reviews/blocks/carousel-widget-block/8b378e9e-c56d-47ce-a754-feca5e0caf59",
           "settings": {
             "themeId": "light",
             "autoscroll": true,
-            "showRating": true,
-            "showReviewPhotos": true,
             "writeReview": true,
             "fixedReviewsHeight": false
           }
@@ -882,8 +885,7 @@
       "block_order": [
         "6490b72d-b568-48e2-b537-0ac04005c847"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "f808af6a-7416-41df-9456-5ca210114976": {
       "type": "section-counters",
@@ -892,28 +894,28 @@
           "type": "counter",
           "settings": {
             "number": "250000+",
-            "text": "<p><strong>Levererade lökar och knölar varje år.<\/strong><\/p>"
+            "text": "<p><strong>Levererade lökar och knölar varje år.</strong></p>"
           }
         },
         "template--19480647565635__f808af6a-7416-41df-9456-5ca210114976-counter-2": {
           "type": "counter",
           "settings": {
             "number": "55000+",
-            "text": "<p><strong>Nöjda kunder sedan 2007<\/strong><\/p>"
+            "text": "<p><strong>Nöjda kunder sedan 2007</strong></p>"
           }
         },
         "6f5f7aa3-b43e-4aa0-8a38-2f13d06c7d8c": {
           "type": "counter",
           "settings": {
             "number": "1000000+",
-            "text": "<p>Levererade växter varje år<\/p><p><\/p>"
+            "text": "<p>Levererade växter varje år</p><p></p>"
           }
         },
         "52aae8b4-5dbf-412c-b074-e58abf24adf9": {
           "type": "counter",
           "settings": {
             "number": "1300000+",
-            "text": "<p><strong>Besök på hemsidan varje år<\/strong><\/p>"
+            "text": "<p><strong>Besök på hemsidan varje år</strong></p>"
           }
         }
       },
@@ -924,13 +926,13 @@
         "52aae8b4-5dbf-412c-b074-e58abf24adf9"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/pink-spring-flowers.jpg",
+        "image": "shopify://shop_images/pink-spring-flowers.jpg",
         "overlay_opacity": 40,
         "color_palette": "light_gradient",
         "text_position": "center",
         "title_size": "h1",
         "title": "Svedberga Plantskola AB",
-        "text": "<p>Vi finns i Nordvästra Skåne närmare bestämt vid foten av naturreservatet Svedberga kulle som tillhör orten Allerum. Svedberga Plantskola har levererat växter och trädgårdstillbehör sedan 2007 och vi erbjuder både privatkunder och företag prisvärda produkter utan att tumma på kvalitén. Vi säljer främst med hemleverans men vill du som kund komma och besöka oss för inspiration eller beställa med avhämtning går det mycket bra.<\/p>",
+        "text": "<p>Vi finns i Nordvästra Skåne närmare bestämt vid foten av naturreservatet Svedberga kulle som tillhör orten Allerum. Svedberga Plantskola har levererat växter och trädgårdstillbehör sedan 2007 och vi erbjuder både privatkunder och företag prisvärda produkter utan att tumma på kvalitén. Vi säljer främst med hemleverans men vill du som kund komma och besöka oss för inspiration eller beställa med avhämtning går det mycket bra.</p>",
         "numbers_boxed": true,
         "numbers_accent_color": false,
         "spacing_desktop": 50,
@@ -968,7 +970,7 @@
         "width": "wide",
         "title_size": "h1",
         "title": "Prenumerera på våra mejl",
-        "text": "<p>Missa aldrig några nyheter och bli först med att veta om rea och erbjudanden Prenumerera på våra e-postmeddelanden<\/p>",
+        "text": "<p>Missa aldrig några nyheter och bli först med att veta om rea och erbjudanden Prenumerera på våra e-postmeddelanden</p>",
         "link_text": "Prenumerera",
         "enable_newsletter_terms_checkbox": false,
         "newsletter_terms_text": "",
@@ -985,8 +987,8 @@
             "date_color_palette": "dark",
             "button_color_palette": "accent",
             "title_size": "h2",
-            "title": "Sofiero Slott 3-5\/5",
-            "text": "<p>Vi medverkar när trädgårdsmästarna på Sofiero Slott planterar Dahlia.<\/p>",
+            "title": "Sofiero Slott 3-5/5",
+            "text": "<p>Vi medverkar när trädgårdsmästarna på Sofiero Slott planterar Dahlia.</p>",
             "date": "May 5th",
             "time": "8PM-16PM",
             "location": "Event location",
@@ -1003,14 +1005,14 @@
             "date_color_palette": "dark",
             "button_color_palette": "accent",
             "title_size": "h2",
-            "title": "Sofiero Slott 19-20\/8",
-            "text": "<p>Svedberga Plantskola är inbjudna till Sofiero Slott i Helsingborg för att medverka på trädgårdsdagarna.<\/p>",
+            "title": "Sofiero Slott 19-20/8",
+            "text": "<p>Svedberga Plantskola är inbjudna till Sofiero Slott i Helsingborg för att medverka på trädgårdsdagarna.</p>",
             "date": "Augusti 20",
             "time": "10PM - 16PM",
             "location": "Plats",
-            "location_url": "https:\/\/www.google.com\/maps\/place\/Sofiero+Slott+och+Slottstr%C3%A4dg%C3%A5rd\/@56.083939,12.6596384,15z\/data=!4m6!3m5!1s0x465231e458c6448d:0x61bf522225519138!8m2!3d56.083939!4d12.6596384!16zL20vMDNncjc0?entry=ttu",
+            "location_url": "https://www.google.com/maps/place/Sofiero+Slott+och+Slottstr%C3%A4dg%C3%A5rd/@56.083939,12.6596384,15z/data=!4m6!3m5!1s0x465231e458c6448d:0x61bf522225519138!8m2!3d56.083939!4d12.6596384!16zL20vMDNncjc0?entry=ttu",
             "link_text": "More info",
-            "link_url": "https:\/\/www.google.com\/maps\/place\/Sofiero+Slott+och+Slottstr%C3%A4dg%C3%A5rd\/@56.083939,12.6596384,15z\/data=!4m2!3m1!1s0x0:0x61bf522225519138?sa=X&ved=2ahUKEwiZ6MaFsvCAAxVFQPEDHWOtAV8Q_BJ6BAhaEAA&ved=2ahUKEwiZ6MaFsvCAAxVFQPEDHWOtAV8Q_BJ6BAh7EAg",
+            "link_url": "https://www.google.com/maps/place/Sofiero+Slott+och+Slottstr%C3%A4dg%C3%A5rd/@56.083939,12.6596384,15z/data=!4m2!3m1!1s0x0:0x61bf522225519138?sa=X&ved=2ahUKEwiZ6MaFsvCAAxVFQPEDHWOtAV8Q_BJ6BAhaEAA&ved=2ahUKEwiZ6MaFsvCAAxVFQPEDHWOtAV8Q_BJ6BAh7EAg",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }
@@ -1021,14 +1023,14 @@
             "date_color_palette": "dark",
             "button_color_palette": "accent",
             "title_size": "h2",
-            "title": "Nordiska Trädgårdar 21-24\/3 2024",
-            "text": "<p>Träffa oss på Nordiska trädgårdar, här säljer vi många av våra produkter till bra priser.<\/p>",
+            "title": "Nordiska Trädgårdar 21-24/3 2024",
+            "text": "<p>Träffa oss på Nordiska trädgårdar, här säljer vi många av våra produkter till bra priser.</p>",
             "date": "August 2nd",
             "time": "",
             "location": "Event location",
             "location_url": "",
             "link_text": "Plats",
-            "link_url": "https:\/\/www.google.com\/maps\/place\/Stockholmsm%C3%A4ssan\/@59.2774575,18.0124257,17z\/data=!3m1!4b1!4m6!3m5!1s0x465f770d009c0eff:0xe899f77f8d0edc88!8m2!3d59.2774548!4d18.015006!16s%2Fm%2F02q32bq?entry=ttu",
+            "link_url": "https://www.google.com/maps/place/Stockholmsm%C3%A4ssan/@59.2774575,18.0124257,17z/data=!3m1!4b1!4m6!3m5!1s0x465f770d009c0eff:0xe899f77f8d0edc88!8m2!3d59.2774548!4d18.015006!16s%2Fm%2F02q32bq?entry=ttu",
             "show_link": true,
             "title_size_mobile": "mobile-size-18"
           }

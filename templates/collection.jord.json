@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "breadcrumbs": {
@@ -16,11 +25,11 @@
             "overlay_opacity": 0,
             "color_palette": "dark",
             "button_color_palette": "light",
-            "video": "shopify:\/\/files\/videos\/Jord.mov",
+            "video": "shopify://files/videos/Jord.mov",
             "text_position": "text-center",
             "title_size": "size-50",
             "title": "Hemleverans av jord med fri frakt.",
-            "text": "<h2><strong>Smidigt, Prisvärt & Snabbt.<\/strong><\/h2><p>Prisgaranti, hittar du billigare som inkluderar hemleverans så matchar vi det.<br\/><em>Fri frakt gäller produkter som levereras på fulla pallar.<\/em><\/p>",
+            "text": "<h2><strong>Smidigt, Prisvärt & Snabbt.</strong></h2><p>Prisgaranti, hittar du billigare som inkluderar hemleverans så matchar vi det.<br/><em>Fri frakt gäller produkter som levereras på fulla pallar.</em></p>",
             "link_text": "",
             "link_url": "",
             "show_link": true,
@@ -49,13 +58,13 @@
           "type": "text",
           "settings": {
             "icon": "none",
-            "image": "shopify:\/\/shop_images\/Hasselfors-1.jpg",
+            "image": "shopify://shop_images/Hasselfors-1.jpg",
             "image_svg": "",
             "image_height": 180,
             "title": "Hasselfors Garden",
             "text": "",
             "link_text": "Se alla produkter från Hasselfors",
-            "link_url": "shopify:\/\/collections\/hasselfors",
+            "link_url": "shopify://collections/hasselfors",
             "button_color_palette": "dark",
             "show_link": false
           }
@@ -64,13 +73,13 @@
           "type": "text",
           "settings": {
             "icon": "none",
-            "image": "shopify:\/\/shop_images\/Emmaljunga-1.jpg",
+            "image": "shopify://shop_images/Emmaljunga-1.jpg",
             "image_svg": "",
             "image_height": 180,
             "title": "Emmaljunga Jord",
             "text": "",
             "link_text": "Se alla produkter från Emmaljunga",
-            "link_url": "shopify:\/\/collections\/emmaljunga",
+            "link_url": "shopify://collections/emmaljunga",
             "button_color_palette": "dark",
             "show_link": false
           }
@@ -79,13 +88,13 @@
           "type": "text",
           "settings": {
             "icon": "none",
-            "image": "shopify:\/\/shop_images\/Magnedol.jpg",
+            "image": "shopify://shop_images/Magnedol.jpg",
             "image_svg": "",
             "image_height": 180,
             "title": "Magnedol",
             "text": "",
             "link_text": "Se alla produkter från Magnedol",
-            "link_url": "shopify:\/\/collections\/magnedol",
+            "link_url": "shopify://collections/magnedol",
             "button_color_palette": "dark",
             "show_link": false
           }
@@ -135,7 +144,7 @@
           "skugglilja",
           "lyckoklover",
           "lupiner",
-          "lililum",
+          "liljor",
           "pioner",
           "praktklocka",
           "physalis",
@@ -153,7 +162,7 @@
         "title_size": "h1",
         "title": "För plantering på våren",
         "link_text": "Se alla",
-        "link_url": "shopify:\/\/collections\/varlokar",
+        "link_url": "shopify://collections/varlokar",
         "button_color_palette": "dark",
         "show_link": false,
         "collection_title_size": "p",
@@ -180,13 +189,11 @@
         },
         "sorting": {
           "type": "sorting",
-          "settings": {
-          }
+          "settings": {}
         },
         "product_grid": {
           "type": "product_grid",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -229,7 +236,7 @@
         "text_alignment": "start",
         "title_size": "h1",
         "title": "Featured collection",
-        "text": "<p>Share information and details about this collection<\/p>",
+        "text": "<p>Share information and details about this collection</p>",
         "link_text": "View all",
         "button_color_palette": "accent",
         "show_link": false,

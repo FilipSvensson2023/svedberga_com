@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "breadcrumbs": {
@@ -12,7 +21,7 @@
         "template--19495877214531__04b9d347-62a2-4ca3-9b35-fcff484719c9-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/220_nelson_garden_seeds_category_image.jpg",
+            "image": "shopify://shop_images/220_nelson_garden_seeds_category_image.jpg",
             "layout": "background",
             "overlay_opacity": 25,
             "color_palette": "dark_gradient",
@@ -20,9 +29,9 @@
             "text_position": "text-center",
             "title_size": "size-50",
             "title": "Veckan erbjudande!",
-            "text": "<h3>Minst 50% rabatt på alla fröer.<\/h3><p><em>Välj fritt i hela sortimentet från Nelson Garden.<\/em><\/p>",
+            "text": "<h3>Minst 50% rabatt på alla fröer.</h3><p><em>Välj fritt i hela sortimentet från Nelson Garden.</em></p>",
             "link_text": "",
-            "link_url": "shopify:\/\/collections\/all",
+            "link_url": "shopify://collections/all",
             "show_link": false,
             "title_size_mobile": "mobile-size-22"
           }
@@ -65,7 +74,7 @@
           "skugglilja",
           "lyckoklover",
           "lupiner",
-          "lililum",
+          "liljor",
           "pioner",
           "praktklocka",
           "physalis",
@@ -83,7 +92,7 @@
         "title_size": "h1",
         "title": "För plantering på våren",
         "link_text": "Se alla",
-        "link_url": "shopify:\/\/collections\/varlokar",
+        "link_url": "shopify://collections/varlokar",
         "button_color_palette": "dark",
         "show_link": false,
         "collection_title_size": "p",
@@ -112,13 +121,11 @@
         },
         "sorting": {
           "type": "sorting",
-          "settings": {
-          }
+          "settings": {}
         },
         "product_grid": {
           "type": "product_grid",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
@@ -139,9 +146,7 @@
         "enable_collections": true,
         "filters_menu_alignment": "left",
         "filter_menu": "",
-        "collections_menu": [
-
-        ],
+        "collections_menu": [],
         "filter_sticky": true,
         "filters_show_more_limit": 7,
         "image_swatches_size": "xs",
@@ -168,7 +173,7 @@
         "text_alignment": "start",
         "title_size": "h1",
         "title": "Featured collection",
-        "text": "<p>Share information and details about this collection<\/p>",
+        "text": "<p>Share information and details about this collection</p>",
         "link_text": "View all",
         "button_color_palette": "accent",
         "show_link": false,

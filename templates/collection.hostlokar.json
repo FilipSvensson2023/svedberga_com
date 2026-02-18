@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "breadcrumbs": {
@@ -16,13 +25,13 @@
             "overlay_opacity": 0,
             "color_palette": "light_gradient",
             "button_color_palette": "accent",
-            "video": "shopify:\/\/files\/videos\/AdobeStock_481048401.mov",
+            "video": "shopify://files/videos/AdobeStock_481048401.mov",
             "text_position": "text-center",
             "title_size": "h1",
             "title": "",
             "text": "",
             "link_text": "",
-            "link_url": "shopify:\/\/collections\/all",
+            "link_url": "shopify://collections/all",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -68,7 +77,7 @@
           "freesia",
           "iris",
           "ixia",
-          "lililum",
+          "liljor",
           "honungslok",
           "ranunkel",
           "rose-of-jericho",
@@ -86,7 +95,7 @@
         "title_size": "h1",
         "title": "För plantering på hösten",
         "link_text": "Se alla",
-        "link_url": "shopify:\/\/collections\/varlokar",
+        "link_url": "shopify://collections/varlokar",
         "button_color_palette": "dark",
         "show_link": false,
         "collection_title_size": "p",
@@ -113,13 +122,11 @@
         },
         "sorting": {
           "type": "sorting",
-          "settings": {
-          }
+          "settings": {}
         },
         "product_grid": {
           "type": "product_grid",
-          "settings": {
-          }
+          "settings": {}
         }
       },
       "block_order": [
