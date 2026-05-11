@@ -232,7 +232,7 @@
             "title": "Grönare gräsmatta med Algomin",
             "text": "<p>Vi levererar hela Algomins sortiment.</p>",
             "link_text": "Se allt från Algomin",
-            "link_url": "shopify://collections/algomin",
+            "link_url": "shopify://collections/algomin-godning-grasfron",
             "show_link": false,
             "title_size_mobile": "mobile-size-18"
           }
@@ -785,7 +785,7 @@
     "77e4c10d-cfbd-4e40-a689-5daa8cc7e4db": {
       "type": "section-featured-collection",
       "settings": {
-        "collection": "algomin",
+        "collection": "algomin-godning-grasfron",
         "layout": "slider",
         "limit": 8,
         "number_of_items": 6,
